@@ -3,6 +3,8 @@ import 'package:flutter_tutorials/demos/hello.dart';
 import 'package:flutter_tutorials/demos/video.dart';
 import 'package:flutter_tutorials/demos/listview.dart';
 import 'package:flutter_tutorials/demos/layoutdemo.dart';
+// import 'package:flutter_tutorials/demos/flow_layout_demo.dart';
+import 'package:flutter_tutorials/demos/flow_layout_demo2.dart';
 import 'package:flutter_tutorials/demos/bottomnavigationbar_demo.dart';
 import 'package:flutter_tutorials/pages/about.dart';
 
@@ -19,8 +21,9 @@ class MyApp extends StatelessWidget {
       // home: AppBarDemo(),
       // home: TabBarDemo(),
       // home: DrawerDemo(),
-       home: BottomNavigationBarDemo(),
+      //  home: BottomNavigationBarDemo(),
       // home: MyLayoutDemo(),
+      home: FlowLayoutDemo(),
       theme: ThemeData(
         // primarySwatch: Colors.green
         primaryColor: Color.fromRGBO(212, 61, 61, 1.0)
