@@ -10,45 +10,89 @@ class FlowLayoutDemo extends StatelessWidget {
       ),
       body: Container(
         color: Color.fromRGBO(0, 0, 0, .03),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.all(10.0),
-              width: double.infinity,
-              height: 100.0,
-              color: Colors.white,
-              child: Center(
-                child: Text('test'),
+        height: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(10.0),
+                width: double.infinity,
+                height: 100.0,
+                color: Colors.white,
+                child: Center(
+                  child: Text('test'),
+                ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.all(10.0),
-              width: double.infinity,
-              height: 200.0,
-              color: Colors.yellow,
-              child: Column(
-                children: <Widget>[
-                  Flexible(
-                    flex: 1,
-                    fit: FlexFit.loose,
-                    child: CustomMultiChildLayout(
-                      delegate: _CircularLayoutDelegate(
-                        itemCount: 10
+              Container(
+                margin: EdgeInsets.all(10.0),
+                width: double.infinity,
+                height: 200.0 * 10,
+                color: Colors.yellow,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 1,
+                      fit: FlexFit.loose,
+                      child: CustomMultiChildLayout(
+                        delegate: _CircularLayoutDelegate(
+                          itemCount: 10
+                        ),
+                        children: List.generate(10, (i) {
+                          return LayoutId(
+                            id: 'button$i',
+                            child: Container(
+                              color: Colors.green,
+                              width: 200.0,
+                              height: 200.0
+                            ),
+                          );
+                        })
                       ),
-                      children: List.generate(10, (i) {
-                        return LayoutId(
-                          id: 'button$i',
-                          child: Container(color: Colors.green, width: 50.0, height: 50.0),
-                        );
-                      })
                     ),
-                  ),
-                ],
-              )
-            ),
-          ]
-        ),
+                  ],
+                )
+              ),
+              Container(
+                margin: EdgeInsets.all(10.0),
+                width: double.infinity,
+                height: 100.0,
+                color: Colors.white,
+                child: Center(
+                  child: Text('test'),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(10.0),
+                width: double.infinity,
+                height: 100.0,
+                color: Colors.white,
+                child: Center(
+                  child: Text('test'),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(10.0),
+                width: double.infinity,
+                height: 100.0,
+                color: Colors.white,
+                child: Center(
+                  child: Text('test'),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(10.0),
+                width: double.infinity,
+                height: 100.0,
+                color: Colors.white,
+                child: Center(
+                  child: Text('test'),
+                ),
+              ),
+            ]
+          ),
+        )
       )
     );
   }
@@ -75,11 +119,12 @@ class _CircularLayoutDelegate extends MultiChildLayoutDelegate {
 
       final Size buttonSize = layoutChild(actionButtonId, BoxConstraints.loose(size));
 
+      print(size);
       print(buttonSize);
 
       positionChild(
         actionButtonId,
-        Offset(buttonSize.width * i, buttonSize.height * i),
+        Offset(buttonSize.width/10 * i, buttonSize.height * i),
         // Offset(10.0, 10.0),
       );
       // if (hasChild(actionButtonId)) {
