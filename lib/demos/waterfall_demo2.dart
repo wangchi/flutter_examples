@@ -1,30 +1,15 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-import 'dart:typed_data';
 import 'package:flutter_tutorials/adapter.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 
-class WaterfallDemo extends StatefulWidget {
+class WaterfallDemo2 extends StatefulWidget {
   @override
   _WaterfallDemoState createState() => new _WaterfallDemoState();
 }
 
 
-class DoubleSize {
-  const DoubleSize(this.width, this.height);
-
-  final double width;
-  final double height;
-}
-
-List<DoubleSize> _createSizes(int count) {
-  Random rnd = new Random();
-  return new List.generate(count,
-      (i) => new DoubleSize((rnd.nextInt(500) + 200.0), rnd.nextInt(800) + 200.0));
-}
-
-
-class _WaterfallDemoState extends State<WaterfallDemo> {
+class _WaterfallDemoState extends State<WaterfallDemo2> {
 
   @override
   void initState() {
@@ -59,33 +44,21 @@ class _WaterfallDemoState extends State<WaterfallDemo> {
     ]);
   }
 
-  // _sizes = _createSizes(_kItemCount).toList();
-
-
   List<Widget> buildPostsfalls() {
     List<Widget> lists = <Widget>[];
-    var _sizes = _createSizes(1000).toList();
-
-    for (var i = 0, len = posts.length; i < len; i++) {
-
-      // print('====');
-      // print(_sizes);
+    posts.forEach((post) {
 
       var item = Positioned(
-        left: i * 20.0,
-        top: i * 100.0,
+        left: 0.0,
+        top: 0.0,
         width: 150.0,
-        // height: _sizes[i].height,
-        child: PostItem(posts[i]['pic'], posts[i]['title'], i),
+        child: PostItem(post['pic'], post['title']),
       );
 
-      // var item = PostItem(posts[i]['pic'], posts[i]['title'], i);
-
-      // print(item.height);
+      print(item.height);
 
       lists.add(item);
-    }
-
+    });
 
     return lists;
   }
@@ -137,10 +110,21 @@ class _WaterfallDemoState extends State<WaterfallDemo> {
               Container(
                 margin: EdgeInsets.all(10.0),
                 width: double.infinity,
-                height: 100.0,
+                height: 1000.0,
                 color: Colors.white,
-                child: Center(
-                  child: Text('test'),
+                child: StaggeredGridView.countBuilder(
+                  primary: false,
+                  shrinkWrap: false,
+                  physics: ScrollPhysics(),
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 4.0,
+                  crossAxisSpacing: 4.0,
+                  itemCount: 6,
+                  itemBuilder: (BuildContext context, int index) => Container(
+                    color: Colors.green,
+                    child: Image.network('http://www.4gbizhi.com/uploads/allimg/150316/144Ha0M-0.jpg', width: double.infinity,),
+                  ),
+                  staggeredTileBuilder: (int index) => StaggeredTile.fit(2),
                 ),
               ),
             ]
@@ -154,44 +138,23 @@ class _WaterfallDemoState extends State<WaterfallDemo> {
 class PostItem extends StatelessWidget {
   final String pic;
   final String text;
-  // final Widget wrapper;
-  final int index;
 
-  PostItem(this.pic, this.text, this.index);
+  PostItem(this.pic, this.text);
 
   @override
   Widget build(BuildContext context) {
 
     RenderBox getBox = context.findRenderObject();
-    print('Size');
-    print(getBox.size);
-    // var size = getBox.size;
+    print('FFFFFF');
+    // print(context.size);
 
     return Container(
       color: Colors.green,
       width: 100.0,
-      // height: size.height,
+      // height: 150.0,
       child: Column(
         children: <Widget>[
-          Stack(
-            children: <Widget>[
-              //new Center(child: new CircularProgressIndicator()),
-              new Center(
-                child: Image.network(pic, width: double.infinity),
-              ),
-            ],
-          ),
-          // Container(
-          //   width: double.infinity,
-          //   height: size.height - 70.0,
-          //   decoration: BoxDecoration(
-          //     image: DecorationImage(
-          //       image: NetworkImage(pic),
-          //       fit: BoxFit.cover
-          //     )
-          //   )
-          // ),
-          // Image.network(pic, width: double.infinity),
+          Image.network(pic, width: double.infinity),
 //                  Image.network('http://www.4gbizhi.com/uploads/allimg/150316/144Ha0M-0.jpg', width: 100.0),
           Container(
             margin: EdgeInsets.all(10.0),

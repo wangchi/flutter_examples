@@ -55,54 +55,18 @@ class FlowLayoutDemo extends StatelessWidget {
               Container(
                 margin: EdgeInsets.all(10.0),
                 width: double.infinity,
-                height: 200.0,
+                height: 200.0 * 3,
                 color: Colors.yellow,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Flexible(
-                      flex: 1,
-                      fit: FlexFit.loose,
-                      child: CustomMultiChildLayout(
-                        delegate: _CircularLayoutDelegate(
-                          itemCount: 10
-                        ),
-                        children: List.generate(10, (i) {
-                          return LayoutId(
-                            id: 'button$i',
-                            child: PostItem('http://si1.go2yd.com/get-image/0RsoA7IzKEq', '哎哎哎'),
-                          );
-                        })
-                      ),
-                    ),
-                  ],
-                )
-              ),
-              Container(
-                margin: EdgeInsets.all(10.0),
-                width: double.infinity,
-                height: 100.0,
-                color: Colors.white,
-                child: Center(
-                  child: Text('test'),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10.0),
-                width: double.infinity,
-                height: 100.0,
-                color: Colors.white,
-                child: Center(
-                  child: Text('test'),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10.0),
-                width: double.infinity,
-                height: 100.0,
-                color: Colors.white,
-                child: Center(
-                  child: Text('test'),
+                child: CustomMultiChildLayout(
+                  delegate: _CircularLayoutDelegate(
+                    itemCount: 3
+                  ),
+                  children: List.generate(3, (i) {
+                    return LayoutId(
+                      id: 'button$i',
+                      child: PostItem('http://si1.go2yd.com/get-image/0RsoA7IzKEq', '哎哎1哎'),
+                    );
+                  })
                 ),
               ),
               Container(
@@ -125,16 +89,24 @@ class FlowLayoutDemo extends StatelessWidget {
 class PostItem extends StatelessWidget {
   final String pic;
   final String text;
+  final _size = 0;
 
   PostItem(this.pic, this.text);
+
+  get size => _size;
 
   @override
   Widget build(BuildContext context) {
 
+    RenderBox box = context.findRenderObject();
+    print('---- box.size ----');
+    // this.size = box.size;
+    print(box.size);
+    // this._size = box.size;
+
     return Container(
       color: Colors.green,
       width: 100.0,
-      // height: 150.0,
       child: Column(
         children: <Widget>[
           Image.network(pic, width: double.infinity),
@@ -171,17 +143,17 @@ class _CircularLayoutDelegate extends MultiChildLayoutDelegate {
 
   @override
   void performLayout(Size size) {
-    print('===++====');
+    // print('===++====');
 
     // center = Offset(size.width / 2, size.height / 2);
     for (int i = 0; i < itemCount; i++) {
       final String actionButtonId = 'button$i';
-      print(actionButtonId);
+      // print(actionButtonId);
 
       final Size buttonSize = layoutChild(actionButtonId, BoxConstraints.loose(size));
 
-      print(size);
-      print(buttonSize);
+      // print(size);
+      // print(buttonSize);
 
       positionChild(
         actionButtonId,
