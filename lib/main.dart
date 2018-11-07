@@ -5,6 +5,7 @@ import 'package:flutter_tutorials/demos/listview.dart';
 import 'package:flutter_tutorials/demos/layoutdemo.dart';
 // import 'package:flutter_tutorials/demos/flow_layout_demo.dart';
 import 'package:flutter_tutorials/demos/flow_layout_demo2.dart';
+import 'package:flutter_tutorials/demos/waterfall_demo.dart';
 import 'package:flutter_tutorials/demos/bottomnavigationbar_demo.dart';
 import 'package:flutter_tutorials/pages/about.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       // home: DrawerDemo(),
       //  home: BottomNavigationBarDemo(),
       // home: MyLayoutDemo(),
-      home: FlowLayoutDemo(),
+      home: WaterfallDemo(),
       theme: ThemeData(
         // primarySwatch: Colors.green
         primaryColor: Color.fromRGBO(212, 61, 61, 1.0)

@@ -27,7 +27,35 @@ class FlowLayoutDemo extends StatelessWidget {
               Container(
                 margin: EdgeInsets.all(10.0),
                 width: double.infinity,
-                height: 200.0 * 10,
+                height: 500.0,
+                color: Colors.white,
+                child: Stack(
+                  children: <Widget>[
+                    Positioned(
+                      left: 0.0,
+                      top: 0.0,
+                      width: 150.0,
+                      child: PostItem('http://si1.go2yd.com/get-image/0RsoA7IzKEq', '这是一段文字123'),
+                    ),
+                    Positioned(
+                      left: 160.0,
+                      top: 0.0,
+                      width: 150.0,
+                      child: PostItem('http://www.4gbizhi.com/uploads/allimg/150316/144Ha0M-0.jpg', '哎哎哎'),
+                    ),
+                    Positioned(
+                      left: 0.0,
+                      top: 210.0,
+                      width: 150.0,
+                      child: PostItem('http://www.4gbizhi.com/uploads/allimg/150316/144Ha0M-0.jpg', '哎哎哎66666'),
+                    )
+                  ],
+                )
+              ),
+              Container(
+                margin: EdgeInsets.all(10.0),
+                width: double.infinity,
+                height: 200.0,
                 color: Colors.yellow,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -42,11 +70,7 @@ class FlowLayoutDemo extends StatelessWidget {
                         children: List.generate(10, (i) {
                           return LayoutId(
                             id: 'button$i',
-                            child: Container(
-                              color: Colors.green,
-                              width: 200.0,
-                              height: 200.0
-                            ),
+                            child: PostItem('http://si1.go2yd.com/get-image/0RsoA7IzKEq', '哎哎哎'),
                           );
                         })
                       ),
@@ -93,6 +117,43 @@ class FlowLayoutDemo extends StatelessWidget {
             ]
           ),
         )
+      )
+    );
+  }
+}
+
+class PostItem extends StatelessWidget {
+  final String pic;
+  final String text;
+
+  PostItem(this.pic, this.text);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+      color: Colors.green,
+      width: 100.0,
+      // height: 150.0,
+      child: Column(
+        children: <Widget>[
+          Image.network(pic, width: double.infinity),
+//                  Image.network('http://www.4gbizhi.com/uploads/allimg/150316/144Ha0M-0.jpg', width: 100.0),
+          Container(
+            margin: EdgeInsets.all(10.0),
+            color: Colors.white,
+            width: double.infinity,
+            height: 50.0,
+            alignment: Alignment.center,
+            child: Text(
+              text,
+              style: TextStyle(
+                fontSize: 12.0,
+                color: Colors.black,
+              ),
+            ),
+          )
+        ],
       )
     );
   }
