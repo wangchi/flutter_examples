@@ -80,7 +80,7 @@ List<IntSize> _createSizes(int count) {
 class Example08 extends StatelessWidget {
   Example08() : _sizes = _createSizes(_kItemCount).toList();
 
-  static const int _kItemCount = 1000;
+  static const int _kItemCount = 10;
   final List<IntSize> _sizes;
 
   @override
@@ -125,7 +125,8 @@ class _Tile extends StatelessWidget {
               new Center(
                 child: new FadeInImage.memoryNetwork(
                   placeholder: kTransparentImage,
-                  image: 'https://picsum.photos/${size.width}/${size.height}/',
+                  // image: 'https://picsum.photos/${size.width}/${size.height}/',
+                  image: 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic${index+1}.jpg',
                 ),
               ),
             ],
