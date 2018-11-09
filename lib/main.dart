@@ -107,6 +107,33 @@ class TabBarDemo extends StatelessWidget {
               onPressed: () => debugPrint('Search button pressed!'),
             ),
           ],
+          // bottom: PreferredSize(
+          //   preferredSize: const Size.fromHeight(300.0),
+          //   child: Container(
+          //     child: Column(
+          //       children: <Widget>[
+          //         Container(
+          //           margin: EdgeInsets.all(16.0),
+          //           width: double.infinity,
+          //           height: 200.0,
+          //           color: Colors.white,
+          //           child: Center(
+          //             child: Text('place something in appbar'),
+          //           ),
+          //         ),
+          //         TabBar(
+          //           indicatorColor: Colors.white,
+          //           tabs: <Widget>[
+          //             Tab(icon: Icon(Icons.mail)),
+          //             Tab(icon: Icon(Icons.image)),
+          //             Tab(icon: Icon(Icons.live_tv)),
+          //             Tab(icon: Icon(Icons.view_agenda)),
+          //           ]
+          //         )
+          //       ]
+          //     )
+          //   ),
+          // ),
           bottom: TabBar(
             indicatorColor: Colors.white,
             tabs: <Widget>[
