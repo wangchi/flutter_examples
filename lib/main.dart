@@ -23,13 +23,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 //      home: Home(),
       // home: AppBarDemo(),
-      // home: TabBarDemo(),
+      home: TabBarDemo(),
       // home: DrawerDemo(),
       //  home: BottomNavigationBarDemo(),
       // home: MyLayoutDemo(),
       // home: FlowLayoutDemo(),
 //       home: WaterfallDemo3(),
-      home: Example08(),
+      // home: Example08(),
       theme: ThemeData(
         // primarySwatch: Colors.green
         primaryColor: Color.fromRGBO(212, 61, 61, 1.0)
@@ -121,7 +121,48 @@ class TabBarDemo extends StatelessWidget {
             Icon(Icons.mail, size: 128.0, color: Colors.black12),
             Icon(Icons.image, size: 128.0, color: Colors.black12),
             // Icon(Icons.live_tv, size: 128.0, color: Colors.black12),
-            LayoutDemo()
+            SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.all(16.0),
+                    width: double.infinity,
+                    height: 200.0,
+                    color: Colors.grey,
+                    child: Center(child: Text('Demo'),),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(16.0),
+                    width: double.infinity,
+                    height: 200.0,
+                    color: Colors.grey,
+                    child: Center(child: Text('Demo'),),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(16.0),
+                    width: double.infinity,
+                    height: 200.0,
+                    color: Colors.grey,
+                    child: Center(child: Text('Demo'),),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(16.0),
+                    width: double.infinity,
+                    height: 200.0,
+                    color: Colors.grey,
+                    child: Center(child: Text('Demo'),),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(16.0),
+                    width: double.infinity,
+                    height: 200.0,
+                    color: Colors.grey,
+                    child: Center(child: Text('Demo'),),
+                  )
+                ],
+              ),
+            )
+            // LayoutDemo()
           ]
         )
         // body: Hello()
