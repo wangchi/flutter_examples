@@ -13,6 +13,7 @@ import 'package:flutter_tutorials/demos/bottomnavigationbar_demo.dart';
 import 'package:flutter_tutorials/pages/about.dart';
 import 'package:flutter_tutorials/demos/tabbar_demo.dart';
 import 'package:flutter_tutorials/demos/sliver_demo.dart';
+import 'package:flutter_tutorials/demos/sliver_tabbar_demo.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,16 +24,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-//      home: Home(),
+      // home: Home(),
       // home: AppBarDemo(),
       // home: TabBarDemo(),
       // home: DrawerDemo(),
        home: BottomNavigationBarDemo(),
       // home: MyLayoutDemo(),
       // home: FlowLayoutDemo(),
-//       home: WaterfallDemo3(),
+      // home: WaterfallDemo3(),
       // home: Example08(),
-      // home: SliverDemo(),
+      // home: SliverTabBarDemo(),
       theme: ThemeData(
         // primarySwatch: Colors.green
         primaryColor: Color.fromRGBO(212, 61, 61, 1.0)
