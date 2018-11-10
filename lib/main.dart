@@ -15,6 +15,7 @@ import 'package:flutter_tutorials/demos/tabbar_demo.dart';
 import 'package:flutter_tutorials/demos/tabbar_without_title_demo.dart';
 import 'package:flutter_tutorials/demos/sliver_demo.dart';
 import 'package:flutter_tutorials/demos/sliver_tabbar_demo.dart';
+import 'package:flutter_tutorials/demos/stick_header_demo.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
       // home: Example08(),
       // home: SliverDemo(),
       // home: SliverTabBarDemo(),
+      // home: StickHeaderDemo(),
       theme: ThemeData(
         // primarySwatch: Colors.green
         // primaryColor: Colors.white
