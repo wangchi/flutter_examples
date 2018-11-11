@@ -2,15 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
 
-class StickHeaderDemo extends StatelessWidget {
+class StickHeaderDemo extends StatefulWidget {
+  @override
+  _StickHeaderDemoState createState() => new _StickHeaderDemoState();
+}
+
+
+class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProviderStateMixin {
+
+  TabController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = new TabController(vsync: this, length:3);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: Text('Flutter Tutorials'),
         leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Menu',
+          icon: Icon(Icons.arrow_back),
+          tooltip: 'Back',
           onPressed: () => debugPrint('Menu button pressed!'),
         ),
         actions: <Widget>[
@@ -89,15 +110,138 @@ class StickHeaderDemo extends StatelessWidget {
     //   pinned: true,
     // ));
     // slivers.addAll(_buildHeaderBuilderLists(context, i, i += 1));
-    // slivers.addAll(_buildLists(context, i, i += 3));
-    slivers.add(_buildLists2(context, i, i += 3));
+    slivers.addAll(_buildLists(context, i, i += 3));
+    // slivers.add(_buildContent(context, i, i += 3));
+    // slivers.add(_buildTabs(context, i, i += 3));
     // slivers.addAll(_buildGrids(context, i, i += 3));
     // slivers.addAll(_buildSideHeaderGrids(context, i, i += 3));
     // slivers.addAll(_buildHeaderBuilderLists(context, i, i += 5));
     return slivers;
   }
 
-  Widget _buildLists2(BuildContext context, int firstIndex, int count) {
+  Widget _buildTabs(BuildContext context, int firstIndex, int count) {
+    bool offTab2 = true;
+    return SliverStickyHeader(
+        header: Container(
+          width: double.infinity,
+          height: 60.0,
+          color: Colors.white,
+          child: getTabBar()
+        ),
+        sliver: SliverList(
+          delegate: new SliverChildBuilderDelegate(
+            (context, i) => Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: 200.0,
+                    child: getTabBarPages(),
+                  ),
+                  // Container(
+                  //   height: 50.0,
+                  //   child: Row(
+                  //     children: <Widget>[
+                  //       Text('tab1'),
+                  //       Text('tab2'),
+                  //     ],
+                  //   ),
+                  // ),
+                  // Stack(
+                  //   children: <Widget>[
+                  //     Offstage(
+                  //       offstage: !offTab2,
+                  //       child: Container(
+                  //         height: 1000.0,
+                  //         color: Colors.green,
+                  //         child: Text('tab1'),
+                  //       ),
+                  //     ),
+                  //     Offstage(
+                  //       offstage: offTab2,
+                  //       child: Text('tab2'),
+                  //     )
+                  //   ],
+                  // )
+
+                ],
+              ),
+            ),
+            childCount: 1,
+          ),
+        ),
+      );
+  }
+
+  Widget getTabBar() {
+    return TabBar(
+      labelColor: Colors.green,
+      controller: _controller,
+      indicatorWeight: 2.0,
+      indicatorPadding: EdgeInsets.all(0.0),
+      indicatorColor: Colors.green,
+      tabs: <Widget>[
+        Tab(text: "Add", icon: Icon(Icons.add)),
+        Tab(text: "Edit", icon: Icon(Icons.edit)),
+        Tab(text: "Delete", icon: Icon(Icons.delete)),
+      ]
+    );
+  }
+
+  Widget getTabBarPages() {
+    return TabBarView(
+      controller: _controller,
+      children: <Widget>[
+        Icon(Icons.mail, size: 128.0, color: Colors.black12),
+        Icon(Icons.image, size: 128.0, color: Colors.black12),
+        // Icon(Icons.live_tv, size: 128.0, color: Colors.black12),
+        Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(16.0),
+              width: double.infinity,
+              height: 200.0,
+              color: Colors.grey,
+              child: Center(child: Text('Demo'),),
+            ),
+            Container(
+              margin: EdgeInsets.all(16.0),
+              width: double.infinity,
+              height: 200.0,
+              color: Colors.grey,
+              child: Center(child: Text('Demo'),),
+            ),
+            Container(
+              margin: EdgeInsets.all(16.0),
+              width: double.infinity,
+              height: 200.0,
+              color: Colors.grey,
+              child: Center(child: Text('Demo'),),
+            ),
+            Container(
+              margin: EdgeInsets.all(16.0),
+              width: double.infinity,
+              height: 200.0,
+              color: Colors.grey,
+              child: Center(child: Text('Demo'),),
+            ),
+            Container(
+              margin: EdgeInsets.all(16.0),
+              width: double.infinity,
+              height: 200.0,
+              color: Colors.grey,
+              child: Center(child: Text('Demo'),),
+            )
+
+          ],
+        ),
+
+        // LayoutDemo()
+      ]
+    );
+  }
+
+
+  Widget _buildContent(BuildContext context, int firstIndex, int count) {
     bool offTab2 = true;
     return SliverStickyHeader(
         header: Container(
