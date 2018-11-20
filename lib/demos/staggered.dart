@@ -77,11 +77,11 @@ List<IntSize> _createSizes(int count) {
       (i) => new IntSize((rnd.nextInt(500) + 200), rnd.nextInt(800) + 200));
 }
 
-class Example08 extends StatelessWidget {
+class Staggered extends StatelessWidget {
   static const int _kItemCount = 10;
   final List<IntSize> _sizes;
 
-  Example08() : _sizes = _createSizes(_kItemCount).toList();
+  Staggered() : _sizes = _createSizes(_kItemCount).toList();
 
   @override
   Widget build(BuildContext context) {
@@ -121,12 +121,12 @@ class _Tile extends StatelessWidget {
         children: <Widget>[
           new Stack(
             children: <Widget>[
-              //new Center(child: new CircularProgressIndicator()),
+              new Center(child: new CircularProgressIndicator()),
               new Center(
                 child: new FadeInImage.memoryNetwork(
                   placeholder: kTransparentImage,
-//                   image: 'https://picsum.photos/${size.width}/${size.height}/',
-                  image: 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic${index+1}.jpg',
+                  image: 'https://picsum.photos/${size.width}/${size.height}/',
+                  // image: 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic${index+1}.jpg',
                 ),
               ),
             ],

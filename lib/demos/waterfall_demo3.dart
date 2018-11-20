@@ -116,7 +116,7 @@ class _WaterfallDemoState extends State<WaterfallDemo3> {
                 margin: EdgeInsets.all(10.0),
                 width: double.infinity,
                 height: 1000.0,
-                color: Colors.white,
+                color: Colors.yellow,
                 child: StaggeredGridView.countBuilder(
                   primary: false,
                   shrinkWrap: false,
@@ -127,7 +127,7 @@ class _WaterfallDemoState extends State<WaterfallDemo3> {
                   itemCount: 5,
                   itemBuilder: (BuildContext context, int index) => Container(
                     color: Colors.green,
-                    child: Image.network('https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic${index}.jpg', width: double.infinity,),
+                    child: Image.network('https://raw.githubusercontent.com/wangchi/code2018/master/css/瀑布流/images/pic${index + 1}.jpg', width: double.infinity,),
                   ),
                   staggeredTileBuilder: (int index) => StaggeredTile.fit(2),
                 ),

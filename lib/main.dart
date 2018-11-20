@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       // home: MyLayoutDemo(),
       // home: FlowLayoutDemo(),
       // home: WaterfallDemo3(),
-      // home: Example08(),
+      // home: Staggered(),
       // home: SliverDemo(),
       // home: SliverTabBarDemo(),
       // home: StickHeaderDemo(),
