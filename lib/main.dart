@@ -16,6 +16,7 @@ import 'package:flutter_tutorials/demos/tabbar_without_title_demo.dart';
 import 'package:flutter_tutorials/demos/sliver_demo.dart';
 import 'package:flutter_tutorials/demos/sliver_tabbar_demo.dart';
 import 'package:flutter_tutorials/demos/stick_header_demo.dart';
+import 'package:flutter_tutorials/demos/lazyload_image.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: Home(),
       // home: AppBarDemo(),
-      home: TabBarDemo(),
+      // home: TabBarDemo(),
+      home: LazyloadImageDemo(),
       // home: TabBarWithoutTitleDemo(),
       // home: DrawerDemo(),
       //  home: BottomNavigationBarDemo(),
