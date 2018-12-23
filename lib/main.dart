@@ -17,6 +17,7 @@ import 'package:flutter_tutorials/demos/sliver_demo.dart';
 import 'package:flutter_tutorials/demos/sliver_tabbar_demo.dart';
 import 'package:flutter_tutorials/demos/stick_header_demo.dart';
 import 'package:flutter_tutorials/demos/lazyload_image.dart';
+import 'package:flutter_tutorials/demos/loading.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
       // home: Home(),
       // home: AppBarDemo(),
       // home: TabBarDemo(),
-      home: LazyloadImageDemo(),
+      // home: LazyloadImageDemo(),
+      home: LoadingDemo(),
       // home: TabBarWithoutTitleDemo(),
       // home: DrawerDemo(),
       //  home: BottomNavigationBarDemo(),
