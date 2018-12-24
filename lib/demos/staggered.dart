@@ -3,73 +3,8 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
-final Uint8List kTransparentImage = new Uint8List.fromList(<int>[
-  0x89,
-  0x50,
-  0x4E,
-  0x47,
-  0x0D,
-  0x0A,
-  0x1A,
-  0x0A,
-  0x00,
-  0x00,
-  0x00,
-  0x0D,
-  0x49,
-  0x48,
-  0x44,
-  0x52,
-  0x00,
-  0x00,
-  0x00,
-  0x01,
-  0x00,
-  0x00,
-  0x00,
-  0x01,
-  0x08,
-  0x06,
-  0x00,
-  0x00,
-  0x00,
-  0x1F,
-  0x15,
-  0xC4,
-  0x89,
-  0x00,
-  0x00,
-  0x00,
-  0x0A,
-  0x49,
-  0x44,
-  0x41,
-  0x54,
-  0x78,
-  0x9C,
-  0x63,
-  0x00,
-  0x01,
-  0x00,
-  0x00,
-  0x05,
-  0x00,
-  0x01,
-  0x0D,
-  0x0A,
-  0x2D,
-  0xB4,
-  0x00,
-  0x00,
-  0x00,
-  0x00,
-  0x49,
-  0x45,
-  0x4E,
-  0x44,
-  0xAE,
-]);
 
 List<IntSize> _createSizes(int count) {
   Random rnd = new Random();
@@ -85,17 +20,17 @@ class Staggered extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('random dynamic tile sizes'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Staggered Grid View Demo'),
       ),
-      body: new StaggeredGridView.countBuilder(
+      body: StaggeredGridView.countBuilder(
         primary: false,
         crossAxisCount: 4,
         mainAxisSpacing: 4.0,
         crossAxisSpacing: 4.0,
-        itemBuilder: (context, index) => new _Tile(index, _sizes[index]),
-        staggeredTileBuilder: (index) => new StaggeredTile.fit(2),
+        itemBuilder: (context, index) => PostCard(index, _sizes[index]),
+        staggeredTileBuilder: (index) => StaggeredTile.fit(2),
       ),
     );
   }
@@ -108,26 +43,33 @@ class IntSize {
   final int height;
 }
 
-class _Tile extends StatelessWidget {
-  const _Tile(this.index, this.size);
+class PostCard extends StatelessWidget {
+  const PostCard(this.index, this.size);
 
   final IntSize size;
   final int index;
 
   @override
   Widget build(BuildContext context) {
+    print(size.width);
+    print(size.height);
     return new Card(
       child: new Column(
         children: <Widget>[
           new Stack(
             children: <Widget>[
-              new Center(child: new CircularProgressIndicator()),
               new Center(
-                child: new FadeInImage.memoryNetwork(
-                  placeholder: kTransparentImage,
-                  image: 'https://picsum.photos/${size.width}/${size.height}/',
-                  // image: 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic${index+1}.jpg',
-                ),
+                child: CachedNetworkImage(
+                  imageUrl: 'https://picsum.photos/${size.width}/${size.height}/',
+                  placeholder: Image.asset('assets/placeholder.png'),
+                  errorWidget: Image.asset('assets/placeholder.png'),
+                  fit: BoxFit.cover
+                )
+                // child: new FadeInImage.memoryNetwork(
+                //   placeholder: kTransparentImage,
+                //   image: 'https://picsum.photos/${size.width}/${size.height}/',
+                //   // image: 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic${index+1}.jpg',
+                // ),
               ),
             ],
           ),
