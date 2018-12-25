@@ -20,17 +20,68 @@ class Staggered extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('----------');
+    // print('_sizes:');
+    // print(_sizes);
+    // print(_sizes.length);
     return Scaffold(
       appBar: AppBar(
         title: Text('Staggered Grid View Demo'),
       ),
-      body: StaggeredGridView.countBuilder(
-        primary: false,
-        crossAxisCount: 4,
-        mainAxisSpacing: 4.0,
-        crossAxisSpacing: 4.0,
-        itemBuilder: (context, index) => PostCard(index, _sizes[index]),
-        staggeredTileBuilder: (index) => StaggeredTile.fit(2),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.black12,
+        child: Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(10.0),
+              width: double.infinity,
+              height: 50.0,
+              color: Colors.white,
+              child: Center(child: Text('TEST')),
+            ),
+            Flexible(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(10.0),
+                      width: double.infinity,
+                      height: 100.0,
+                      color: Colors.white,
+                      child: Center(child: Text('Content')),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                      width: double.infinity,
+                      height: 1000.0,
+                      // height: double.maxFinite,
+                      child: StaggeredGridView.countBuilder(
+                        physics: NeverScrollableScrollPhysics(),
+                        primary: false,
+                        crossAxisCount: 4,
+                        mainAxisSpacing: 4.0,
+                        crossAxisSpacing: 4.0,
+                        itemBuilder: (context, index) => PostCard(index, _sizes[index]),
+                        staggeredTileBuilder: (index) => StaggeredTile.fit(2),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10.0),
+                      width: double.infinity,
+                      height: 50.0,
+                      color: Colors.white,
+                      child: Center(child: Text('Footer')),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

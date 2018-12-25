@@ -9,6 +9,7 @@ import 'package:flutter_tutorials/demos/waterfall_demo.dart';
 import 'package:flutter_tutorials/demos/waterfall_demo2.dart';
 import 'package:flutter_tutorials/demos/waterfall_demo3.dart';
 import 'package:flutter_tutorials/demos/staggered.dart';
+import 'package:flutter_tutorials/demos/sliver_staggered_grid_demo.dart';
 import 'package:flutter_tutorials/demos/bottomnavigationbar_demo.dart';
 import 'package:flutter_tutorials/pages/about.dart';
 import 'package:flutter_tutorials/demos/tabbar_demo.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
       // home: LoadingDemo(),
       // home: GetImageSizeDemo(),
       // home: StaggeredGridViewDemo(),
-      home: Staggered(),
+      // home: Staggered(),
+      home: SliverStaggeredGridDemo(),
       // home: TabBarWithoutTitleDemo(),
       // home: DrawerDemo(),
       //  home: BottomNavigationBarDemo(),
