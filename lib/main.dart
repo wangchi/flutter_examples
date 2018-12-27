@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: Home(),
+      home: Home(),
       // home: AppBarDemo(),
       // home: TabBarDemo(),
       // home: LazyloadImageDemo(),
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       // home: SliverStaggeredGridDemo(),
       // home: TabBarWithoutTitleDemo(),
       // home: DrawerDemo(),
-      home: BottomNavigationBarDemo(),
+      // home: BottomNavigationBarDemo(),
       // home: MyLayoutDemo(),
       // home: FlowLayoutDemo(),
       // home: WaterfallDemo3(),
