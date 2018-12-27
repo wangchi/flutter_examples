@@ -21,6 +21,7 @@ import 'package:flutter_tutorials/demos/lazyload_image.dart';
 import 'package:flutter_tutorials/demos/loading.dart';
 import 'package:flutter_tutorials/demos/get_image_size.dart';
 import 'package:flutter_tutorials/demos/staggered_grid_view.dart';
+import 'package:flutter_tutorials/screens/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
 }
 
 // home: Home()
-class Home extends StatelessWidget {
+class Home1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
