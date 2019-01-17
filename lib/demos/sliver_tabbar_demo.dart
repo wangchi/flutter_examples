@@ -25,9 +25,9 @@ class SliverTabBarDemo extends StatelessWidget {
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-              // title: Text('PUSHSTACK'),
+//              title: Text('PUSHSTACK'),
               leading: IconButton(
-                icon: Icon(Icons.menu),
+                icon: Icon(Icons.arrow_back),
                 tooltip: 'Menu',
                 onPressed: () => debugPrint('Menu button pressed!'),
               ),
@@ -39,7 +39,7 @@ class SliverTabBarDemo extends StatelessWidget {
                 ),
               ],
               pinned: true,
-              // floating: true,
+//               floating: true,
               bottom: TabBar(
                 indicatorColor: Colors.white,
                 tabs: <Widget>[
@@ -47,36 +47,36 @@ class SliverTabBarDemo extends StatelessWidget {
                   Tab(icon: Icon(Icons.image)),
                 ]
               ),
-              // bottom: PreferredSize(
-              //   preferredSize: const Size.fromHeight(300.0),
-              //   child: Container(
-              //     child: Column(
-              //       children: <Widget>[
-              //         Container(
-              //           margin: EdgeInsets.all(16.0),
-              //           width: double.infinity,
-              //           color: Colors.white,
-              //           child: Center(
-              //             child: Text('place something in appbar'),
-              //           ),
-              //         ),
-              //         TabBar(
-              //           indicatorColor: Colors.white,
-              //           tabs: <Widget>[
-              //             Tab(icon: Icon(Icons.mail)),
-              //             Tab(icon: Icon(Icons.image)),
-              //           ]
-              //         )
-              //       ]
-              //     )
-              //   ),
-              // ),
+//               bottom: PreferredSize(
+//                 preferredSize: const Size.fromHeight(300.0),
+//                 child: Container(
+//                   child: Column(
+//                     children: <Widget>[
+//                       Container(
+//                         margin: EdgeInsets.all(16.0),
+//                         width: double.infinity,
+//                         color: Colors.white,
+//                         child: Center(
+//                           child: Text('place something in appbar'),
+//                         ),
+//                       ),
+//                       TabBar(
+//                         indicatorColor: Colors.white,
+//                         tabs: <Widget>[
+//                           Tab(icon: Icon(Icons.mail)),
+//                           Tab(icon: Icon(Icons.image)),
+//                         ]
+//                       )
+//                     ]
+//                   )
+//                 ),
+//               ),
 
               expandedHeight: 300.0,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text(
-                  'www.pushstack.com'.toUpperCase()
-                ),
+//                title: Text(
+//                  'www.pushstack.com'.toUpperCase()
+//                ),
                 background: Image.network(
                   'https://tva3.sinaimg.cn/crop.0.0.640.640.640/a1d3feabjw1eca1gkmhz8j20hs0hswfn.jpg',
                   fit: BoxFit.cover

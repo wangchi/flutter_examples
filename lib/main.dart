@@ -16,6 +16,8 @@ import 'package:flutter_tutorials/demos/tabbar_demo.dart';
 import 'package:flutter_tutorials/demos/tabbar_without_title_demo.dart';
 import 'package:flutter_tutorials/demos/sliver_demo.dart';
 import 'package:flutter_tutorials/demos/sliver_tabbar_demo.dart';
+import 'package:flutter_tutorials/demos/slivers/sliver_appbar_demo.dart';
+import 'package:flutter_tutorials/demos/slivers/sliver_persistent_header_demo.dart';
 import 'package:flutter_tutorials/demos/stick_header_demo.dart';
 import 'package:flutter_tutorials/demos/lazyload_image.dart';
 import 'package:flutter_tutorials/demos/loading.dart';
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+//      home: Home(),
       // home: AppBarDemo(),
       // home: TabBarDemo(),
       // home: LazyloadImageDemo(),
@@ -47,9 +49,11 @@ class MyApp extends StatelessWidget {
       // home: MyLayoutDemo(),
       // home: FlowLayoutDemo(),
       // home: WaterfallDemo3(),
-      // home: SliverDemo(),
-      // home: SliverTabBarDemo(),
+//       home: SliverDemo(),
+//       home: SliverTabBarDemo(),
       // home: StickHeaderDemo(),
+//      home: SliverAppBarDemo(),
+      home: SliverPersistentHeaderDemo(),
       theme: ThemeData(
         // primarySwatch: Colors.green
         // primaryColor: Colors.white
