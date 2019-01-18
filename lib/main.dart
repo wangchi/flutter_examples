@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-//      home: Home(),
+      home: Home(),
       // home: AppBarDemo(),
       // home: TabBarDemo(),
       // home: LazyloadImageDemo(),
@@ -49,11 +49,11 @@ class MyApp extends StatelessWidget {
       // home: MyLayoutDemo(),
       // home: FlowLayoutDemo(),
       // home: WaterfallDemo3(),
-//       home: SliverDemo(),
-//       home: SliverTabBarDemo(),
+      // home: SliverDemo(),
+      // home: SliverTabBarDemo(),
       // home: StickHeaderDemo(),
-//      home: SliverAppBarDemo(),
-      home: SliverPersistentHeaderDemo(),
+      // home: SliverAppBarDemo(),
+      // home: SliverPersistentHeaderDemo(),
       theme: ThemeData(
         // primarySwatch: Colors.green
         // primaryColor: Colors.white
