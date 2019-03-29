@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorials/pages/WebViewDemo.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -53,6 +54,44 @@ class _HomeState extends State<Home> {
                 child: Text(
                   '3. TabBar'
                 )
+              ),
+              GestureDetector(
+                onTap: () {
+                  // Navigator.of(context).pushNamed('/webview_demo');
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return WebViewDemo();
+                  }));
+                },
+                child: Container(
+                  margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+                  padding: EdgeInsets.all(16.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(3.0)
+                  ),
+                  child: Text(
+                    'Webview'
+                  )
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  print('sss');
+                  Navigator.of(context).pushNamed('/flutter_redux');
+                },
+                child: Container(
+                  margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+                  padding: EdgeInsets.all(16.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(3.0)
+                  ),
+                  child: Text(
+                    'Flutter Redux'
+                  )
+                ),
               ),
             ],
           ),

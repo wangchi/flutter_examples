@@ -25,16 +25,62 @@ import 'package:flutter_tutorials/demos/get_image_size.dart';
 import 'package:flutter_tutorials/demos/staggered_grid_view.dart';
 import 'package:flutter_tutorials/screens/home.dart';
 
+import 'package:flutter_tutorials/routes.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import 'package:flutter_tutorials/store/store.dart';
+
+enum Actions { Increment, Decrement }
+
+int counterReducer(int state, dynamic action) {
+  if (action == 'Increment') {
+    return state + 1;
+  }
+
+  if (action == 'Decrement') {
+    return state - 1;
+  }
+
+  return state;
+}
+
 void main() {
-  runApp(MyApp());
+  final store = new Store<int>(counterReducer, initialState: 0);
+  // final store = new Store<MainState>(mainReducer, initialState: MainState.initial());
+  runApp(MyApp(store: store));
 }
 
 class MyApp extends StatelessWidget {
+  MyApp({ Key key, this.store }) : super(key: key);
+
+  final Store<int> store;
+
+  @override
+  Widget build(BuildContext context) {
+    return StoreProvider(
+      store: store,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: Color.fromRGBO(212, 61, 61, 1.0)
+        ),
+        routes: routes
+      )
+    );
+  }
+
+  /*
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      theme: ThemeData(
+        // primarySwatch: Colors.green
+        // primaryColor: Colors.white
+        primaryColor: Color.fromRGBO(212, 61, 61, 1.0)
+      ),
+      routes: routes
+      // home: Home(),
       // home: AppBarDemo(),
       // home: TabBarDemo(),
       // home: LazyloadImageDemo(),
@@ -54,16 +100,13 @@ class MyApp extends StatelessWidget {
       // home: StickHeaderDemo(),
       // home: SliverAppBarDemo(),
       // home: SliverPersistentHeaderDemo(),
-      theme: ThemeData(
-        // primarySwatch: Colors.green
-        // primaryColor: Colors.white
-        primaryColor: Color.fromRGBO(212, 61, 61, 1.0)
-      ),
-      routes: <String, WidgetBuilder> {
-        '/about_page': (BuildContext context) => AboutPage(),
-      },
+
+      // routes: <String, WidgetBuilder> {
+      //   '/about_page': (BuildContext context) => AboutPage(),
+      // },
     );
   }
+  */
 }
 
 // home: Home()
