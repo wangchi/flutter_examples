@@ -1,6 +1,6 @@
 # flutter_tutorials
 
-一个包含各种示例的 Flutter 项目
+一个包含多个示例的 Flutter 项目
 
 ## 运行
 
