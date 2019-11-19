@@ -10,7 +10,7 @@ class WebViewDemoState extends State<WebViewDemo> {
   @override
   Widget build(BuildContext context) {
     return WebviewScaffold(
-      url: 'https://www.baidu.com',
+      url: 'https://www.google.com',
       appBar: AppBar(
         title: const Text('WebView Demo'),
       ),
@@ -23,7 +23,7 @@ class WebViewDemoState extends State<WebViewDemo> {
         child: const Center(
           child: Text('Waiting.....'),
         ),
-      )
+      ),
     );
   }
 }

@@ -18,11 +18,7 @@ class _ButtomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
 
   @override
   void initState() {
-    list
-      ..add(HomePage())
-      ..add(VideoPage())
-      ..add(FindPage())
-      ..add(FavouritePage());
+    list..add(Home())..add(VideoPage())..add(FindPage())..add(FavouritePage());
     super.initState();
   }
 
@@ -43,21 +39,21 @@ class _ButtomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Home')
+            title: Text('Home'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.videocam),
-            title: Text('Video')
+            title: Text('Video'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.remove_red_eye),
-            title: Text('Find')
+            title: Text('Find'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.star),
-            title: Text('Favourite')
+            title: Text('Favourite'),
           ),
-        ]
+        ],
       ),
     );
   }

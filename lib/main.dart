@@ -23,7 +23,7 @@ import 'package:flutter_tutorials/demos/lazyload_image.dart';
 import 'package:flutter_tutorials/demos/loading.dart';
 import 'package:flutter_tutorials/demos/get_image_size.dart';
 import 'package:flutter_tutorials/demos/staggered_grid_view.dart';
-import 'package:flutter_tutorials/screens/home.dart';
+// import 'package:flutter_tutorials/screens/home.dart';
 
 import 'package:flutter_tutorials/routes.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -51,7 +51,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({ Key key, this.store }) : super(key: key);
+  MyApp({Key key, this.store}) : super(key: key);
 
   final Store<int> store;
 
@@ -62,10 +62,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: Color.fromRGBO(212, 61, 61, 1.0)
+          primaryColor: Color.fromRGBO(212, 61, 61, 1.0),
         ),
-        routes: routes
-      )
+        routes: routes,
+      ),
     );
   }
 
@@ -109,51 +109,6 @@ class MyApp extends StatelessWidget {
   */
 }
 
-// home: Home()
-class Home1 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: Text('Flutter Tutorials'),
-      ),
-      body: Hello()
-      // body: VideoApp()
-      // body: ListViewDemo()
-    );
-  }
-}
-
-// home: AppBarDemo()
-class AppBarDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: Text('Flutter Tutorials'),
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Menu',
-          onPressed: () => debugPrint('Menu button pressed!'),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: () => debugPrint('Search button pressed!'),
-          ),
-        ],
-      ),
-      body: Center(
-        child: Text(
-          'AppBarDemo',
-          style: TextStyle(fontSize: 32.0)
-        )
-      )
-    );
-  }
-}
-
 // home: DrawerDemo()
 class DrawerDemo extends StatelessWidget {
   @override
@@ -174,12 +129,7 @@ class DrawerDemo extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Text(
-          'DrawerDemo',
-          style: TextStyle(fontSize: 32.0)
-        )
-      ),
+      body: Center(child: Text('DrawerDemo', style: TextStyle(fontSize: 32.0))),
       // drawer: Container(
       //   color: Colors.white,
       //   padding: EdgeInsets.all(8.0),
@@ -193,44 +143,37 @@ class DrawerDemo extends StatelessWidget {
       // ),
       // endDrawer: Text('endDrawer'),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('WANGCHI'),
-              decoration: BoxDecoration(
-                color: Colors.grey[100]
-              )
-            ),
-            // UserAccountsDrawerHeader(
-            //   decoration: new BoxDecoration(
-            //     image: new DecorationImage(
-            //       image: new NetworkImage('https://tva3.sinaimg.cn/crop.0.0.640.640.640/a1d3feabjw1eca1gkmhz8j20hs0hswfn.jpg'),
-            //       fit: BoxFit.cover,
-            //     ),
-            //   ),
-            //   accountName: new Text('walkerbe'),
-            //   accountEmail: new Text('hiwangchi@gmail.com'),
-            //   currentAccountPicture: new CircleAvatar(
-            //     backgroundImage: new NetworkImage('https://tva2.sinaimg.cn/crop.0.0.640.640.180/9e5b07c7jw8f014yvcyjbj20hs0hs3z4.jpg'),
-            //   ),
-            // ),
-            // ListTile(
-            //   title: Text('Favourite'),
-            //   leading: Icon(Icons.favorite),
-            // ),
-            // ListTile(
-            //   title: Text('About'),
-            //   leading: Icon(Icons.people),
-            // ),
-            // ListTile(
-            //   title: Text('Settings'),
-            //   leading: Icon(Icons.settings),
-            //   onTap: () => Navigator.pop(context),
-            // )
-          ]
-        )
-      ),
+          child: ListView(padding: EdgeInsets.zero, children: <Widget>[
+        DrawerHeader(
+            child: Text('WANGCHI'),
+            decoration: BoxDecoration(color: Colors.grey[100])),
+        // UserAccountsDrawerHeader(
+        //   decoration: new BoxDecoration(
+        //     image: new DecorationImage(
+        //       image: new NetworkImage('https://tva3.sinaimg.cn/crop.0.0.640.640.640/a1d3feabjw1eca1gkmhz8j20hs0hswfn.jpg'),
+        //       fit: BoxFit.cover,
+        //     ),
+        //   ),
+        //   accountName: new Text('walkerbe'),
+        //   accountEmail: new Text('hiwangchi@gmail.com'),
+        //   currentAccountPicture: new CircleAvatar(
+        //     backgroundImage: new NetworkImage('https://tva2.sinaimg.cn/crop.0.0.640.640.180/9e5b07c7jw8f014yvcyjbj20hs0hs3z4.jpg'),
+        //   ),
+        // ),
+        // ListTile(
+        //   title: Text('Favourite'),
+        //   leading: Icon(Icons.favorite),
+        // ),
+        // ListTile(
+        //   title: Text('About'),
+        //   leading: Icon(Icons.people),
+        // ),
+        // ListTile(
+        //   title: Text('Settings'),
+        //   leading: Icon(Icons.settings),
+        //   onTap: () => Navigator.pop(context),
+        // )
+      ])),
     );
   }
 }
@@ -248,11 +191,9 @@ class MyLayoutDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
-        title: Text('Flutter Tutorials'),
-      ),
-      body: LayoutDemo()
-    );
+        appBar: new AppBar(
+          title: Text('Flutter Tutorials'),
+        ),
+        body: LayoutDemo());
   }
 }
-

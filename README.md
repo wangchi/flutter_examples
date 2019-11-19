@@ -9,10 +9,12 @@
 ```bash
 git clone git@github.com:wangchi/flutter_tutorials.git
 cd flutter_tutorials
-flutter run∏
+flutter run
 ```
 
 ## 部分截图
+
+![](./screenshots/catalog.png)
 
 ![](./screenshots/screenshot1.png)
 

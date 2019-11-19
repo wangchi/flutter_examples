@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-
 List<IntSize> _createSizes(int count) {
   Random rnd = new Random();
   return new List.generate(count,
@@ -39,7 +38,9 @@ class Staggered extends StatelessWidget {
               width: double.infinity,
               height: 50.0,
               color: Colors.white,
-              child: Center(child: Text('TEST')),
+              child: Center(
+                child: Text('TEST'),
+              ),
             ),
             Flexible(
               child: SingleChildScrollView(
@@ -52,7 +53,9 @@ class Staggered extends StatelessWidget {
                       width: double.infinity,
                       height: 100.0,
                       color: Colors.white,
-                      child: Center(child: Text('Content')),
+                      child: Center(
+                        child: Text('Content'),
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 10.0, right: 10.0),
@@ -65,7 +68,8 @@ class Staggered extends StatelessWidget {
                         crossAxisCount: 4,
                         mainAxisSpacing: 4.0,
                         crossAxisSpacing: 4.0,
-                        itemBuilder: (context, index) => PostCard(index, _sizes[index]),
+                        itemBuilder: (context, index) =>
+                            PostCard(index, _sizes[index]),
                         staggeredTileBuilder: (index) => StaggeredTile.fit(2),
                       ),
                     ),
@@ -74,7 +78,9 @@ class Staggered extends StatelessWidget {
                       width: double.infinity,
                       height: 50.0,
                       color: Colors.white,
-                      child: Center(child: Text('Footer')),
+                      child: Center(
+                        child: Text('Footer'),
+                      ),
                     ),
                   ],
                 ),
@@ -110,18 +116,20 @@ class PostCard extends StatelessWidget {
           new Stack(
             children: <Widget>[
               new Center(
-                child: CachedNetworkImage(
-                  imageUrl: 'https://picsum.photos/${size.width}/${size.height}/',
-                  placeholder: Image.asset('assets/placeholder.png'),
-                  errorWidget: Image.asset('assets/placeholder.png'),
-                  fit: BoxFit.cover
-                )
-                // child: new FadeInImage.memoryNetwork(
-                //   placeholder: kTransparentImage,
-                //   image: 'https://picsum.photos/${size.width}/${size.height}/',
-                //   // image: 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic${index+1}.jpg',
-                // ),
-              ),
+                  child: CachedNetworkImage(
+                imageUrl: 'https://picsum.photos/${size.width}/${size.height}/',
+                placeholder: (context, url) =>
+                    Image.asset('assets/placeholder.png'),
+                errorWidget: (context, url, error) =>
+                    Image.asset('assets/placeholder.png'),
+                fit: BoxFit.cover,
+              )
+                  // child: new FadeInImage.memoryNetwork(
+                  //   placeholder: kTransparentImage,
+                  //   image: 'https://picsum.photos/${size.width}/${size.height}/',
+                  //   // image: 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic${index+1}.jpg',
+                  // ),
+                  ),
             ],
           ),
           new Padding(
@@ -130,15 +138,21 @@ class PostCard extends StatelessWidget {
               children: <Widget>[
                 new Text(
                   'Image number $index',
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 new Text(
                   'Width: ${size.width}',
-                  style: const TextStyle(color: Colors.grey),
+                  style: const TextStyle(
+                    color: Colors.grey,
+                  ),
                 ),
                 new Text(
                   'Height: ${size.height}',
-                  style: const TextStyle(color: Colors.grey),
+                  style: const TextStyle(
+                    color: Colors.grey,
+                  ),
                 ),
               ],
             ),

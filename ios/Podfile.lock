@@ -4,10 +4,14 @@ PODS:
   - Flutter (1.0.0)
   - flutter_webview_plugin (0.0.1):
     - Flutter
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - path_provider (0.0.1):
     - Flutter
-  - shared_preferences (0.0.1):
+  - sqflite (0.0.1):
     - Flutter
+    - FMDB (~> 2.7.2)
   - video_player (0.0.1):
     - Flutter
 
@@ -16,8 +20,12 @@ DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
   - flutter_webview_plugin (from `.symlinks/plugins/flutter_webview_plugin/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
-  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
   - video_player (from `.symlinks/plugins/video_player/ios`)
+
+SPEC REPOS:
+  trunk:
+    - FMDB
 
 EXTERNAL SOURCES:
   device_info:
@@ -28,19 +36,20 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_webview_plugin/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
-  shared_preferences:
-    :path: ".symlinks/plugins/shared_preferences/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
   video_player:
     :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
-  device_info: 76ce0b32e13034d1883be4a382433648f9dcee63
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  flutter_webview_plugin: 116575b48572029304775b768e9f15ebfc316274
-  path_provider: 09407919825bfe3c2deae39453b7a5b44f467873
-  shared_preferences: 5a1d487c427ee18fcd3ea1f2a131569481834b53
-  video_player: 906796a841943c8d370ac7c13b18039aa9b56498
+  device_info: 3ebad48f726348f69abd802f3334a8d1ed795fbd
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
+  sqflite: ff1d9da63c06588cc8d1faf7256d741f16989d5a
+  video_player: 69c5f029fac4ffe4fc8a85ea7f7b793709661549
 
 PODFILE CHECKSUM: 1e5af4103afd21ca5ead147d7b81d06f494f51a2
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
