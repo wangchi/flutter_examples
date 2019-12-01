@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/demos/listview.dart';
+// import 'package:flutter_tutorials/demos/listview.dart';
 
-class SliverDemo extends StatelessWidget {
+class SliverExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

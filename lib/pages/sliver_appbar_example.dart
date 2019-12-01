@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SliverAppBarDemo extends StatefulWidget {
+class SliverAppBarExample extends StatefulWidget {
   @override
   _SliverAppBarDemoState createState() => new _SliverAppBarDemoState();
 }
 
-class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
+class _SliverAppBarDemoState extends State<SliverAppBarExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,19 +32,17 @@ class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
           ),
           SliverFixedExtentList(
             itemExtent: 150.0,
-            delegate: SliverChildListDelegate(
-              [
-                Container(color: Colors.red),
-                Container(color: Colors.purple),
-                Container(color: Colors.green),
-                Container(color: Colors.orange),
-                Container(color: Colors.yellow),
-                Container(color: Colors.pink),
-              ]
-            ),
+            delegate: SliverChildListDelegate([
+              Container(color: Colors.red),
+              Container(color: Colors.purple),
+              Container(color: Colors.green),
+              Container(color: Colors.orange),
+              Container(color: Colors.yellow),
+              Container(color: Colors.pink),
+            ]),
           )
         ],
-      )
+      ),
     );
   }
 }

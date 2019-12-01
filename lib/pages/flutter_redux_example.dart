@@ -3,12 +3,12 @@ import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_tutorials/store/store.dart';
 
-class FlutterReduxDemo extends StatefulWidget {
+class FlutterReduxExample extends StatefulWidget {
   @override
   _FlutterReduxState createState() => new _FlutterReduxState();
 }
 
-class _FlutterReduxState extends State<FlutterReduxDemo> {
+class _FlutterReduxState extends State<FlutterReduxExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

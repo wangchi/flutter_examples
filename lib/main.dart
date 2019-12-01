@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/demos/hello.dart';
-import 'package:flutter_tutorials/demos/video.dart';
-import 'package:flutter_tutorials/demos/listview.dart';
+// import 'package:flutter_tutorials/demos/hello.dart';
+// import 'package:flutter_tutorials/demos/video.dart';
+// import 'package:flutter_tutorials/demos/listview.dart';
 import 'package:flutter_tutorials/demos/layoutdemo.dart';
 // import 'package:flutter_tutorials/demos/flow_layout_demo.dart';
-import 'package:flutter_tutorials/demos/flow_layout_demo2.dart';
-import 'package:flutter_tutorials/demos/waterfall_demo.dart';
-import 'package:flutter_tutorials/demos/waterfall_demo2.dart';
-import 'package:flutter_tutorials/demos/waterfall_demo3.dart';
-import 'package:flutter_tutorials/demos/staggered.dart';
-import 'package:flutter_tutorials/demos/sliver_staggered_grid_demo.dart';
-import 'package:flutter_tutorials/demos/bottomnavigationbar_demo.dart';
-import 'package:flutter_tutorials/pages/about.dart';
-import 'package:flutter_tutorials/demos/tabbar_demo.dart';
-import 'package:flutter_tutorials/demos/tabbar_without_title_demo.dart';
-import 'package:flutter_tutorials/demos/sliver_demo.dart';
-import 'package:flutter_tutorials/demos/sliver_tabbar_demo.dart';
-import 'package:flutter_tutorials/demos/slivers/sliver_appbar_demo.dart';
-import 'package:flutter_tutorials/demos/slivers/sliver_persistent_header_demo.dart';
-import 'package:flutter_tutorials/demos/stick_header_demo.dart';
-import 'package:flutter_tutorials/demos/lazyload_image.dart';
-import 'package:flutter_tutorials/demos/loading.dart';
-import 'package:flutter_tutorials/demos/get_image_size.dart';
-import 'package:flutter_tutorials/demos/staggered_grid_view.dart';
+// import 'package:flutter_tutorials/demos/flow_layout_demo2.dart';
+// import 'package:flutter_tutorials/demos/waterfall_demo.dart';
+// import 'package:flutter_tutorials/demos/waterfall_demo2.dart';
+// import 'package:flutter_tutorials/demos/waterfall_demo3.dart';
+// import 'package:flutter_tutorials/demos/staggered.dart';
+// import 'package:flutter_tutorials/demos/sliver_staggered_grid_demo.dart';
+// import 'package:flutter_tutorials/demos/bottomnavigationbar_demo.dart';
+// import 'package:flutter_tutorials/pages/about.dart';
+// import 'package:flutter_tutorials/demos/tabbar_demo.dart';
+// import 'package:flutter_tutorials/demos/tabbar_without_title_demo.dart';
+// import 'package:flutter_tutorials/demos/sliver_demo.dart';
+// import 'package:flutter_tutorials/demos/sliver_tabbar_demo.dart';
+// import 'package:flutter_tutorials/demos/slivers/sliver_appbar_demo.dart';
+// import 'package:flutter_tutorials/demos/slivers/sliver_persistent_header_demo.dart';
+// import 'package:flutter_tutorials/demos/stick_header_demo.dart';
+// import 'package:flutter_tutorials/demos/lazyload_image.dart';
+// import 'package:flutter_tutorials/demos/loading.dart';
+// import 'package:flutter_tutorials/demos/get_image_size.dart';
+// import 'package:flutter_tutorials/demos/staggered_grid_view.dart';
 // import 'package:flutter_tutorials/screens/home.dart';
 
 import 'package:flutter_tutorials/routes.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:flutter_tutorials/store/store.dart';
+// import 'package:flutter_tutorials/store/store.dart';
 
 enum Actions { Increment, Decrement }
 
@@ -145,7 +145,7 @@ class DrawerDemo extends StatelessWidget {
       drawer: Drawer(
           child: ListView(padding: EdgeInsets.zero, children: <Widget>[
         DrawerHeader(
-            child: Text('WANGCHI'),
+            child: Text('BluesDari'),
             decoration: BoxDecoration(color: Colors.grey[100])),
         // UserAccountsDrawerHeader(
         //   decoration: new BoxDecoration(
@@ -179,12 +179,12 @@ class DrawerDemo extends StatelessWidget {
 }
 
 // home: BottomNavigatorDemo()
-class BottomNavigatorDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBarDemo();
-  }
-}
+// class BottomNavigatorDemo extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return BottomNavigationBarDemo();
+//   }
+// }
 
 // home: MyLayoutDemo
 class MyLayoutDemo extends StatelessWidget {

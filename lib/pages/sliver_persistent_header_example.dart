@@ -1,13 +1,15 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/widgets/empty_app_bar.dart';
+// import 'package:flutter_tutorials/widgets/empty_app_bar.dart';
 
-class SliverPersistentHeaderDemo extends StatefulWidget {
+class SliverPersistentHeaderExample extends StatefulWidget {
   @override
-  _SliverPersistentHeaderDemoState createState() => new _SliverPersistentHeaderDemoState();
+  _SliverPersistentHeaderDemoState createState() =>
+      new _SliverPersistentHeaderDemoState();
 }
 
-class _SliverPersistentHeaderDemoState extends State<SliverPersistentHeaderDemo> {
+class _SliverPersistentHeaderDemoState
+    extends State<SliverPersistentHeaderExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,12 +45,10 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => math.max(maxHeight, minHeight);
   @override
   Widget build(
-      BuildContext context,
-      double shrinkOffset,
-      bool overlapsContent)
-  {
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return new SizedBox.expand(child: child);
   }
+
   @override
   bool shouldRebuild(_SliverAppBarDelegate oldDelegate) {
     return maxHeight != oldDelegate.maxHeight ||
@@ -76,22 +76,28 @@ class _CollapsingListState extends State<CollapsingList> {
           padding: EdgeInsets.only(top: paddingTop),
           decoration: BoxDecoration(
             color: Colors.white,
-            border: Border(bottom: BorderSide(color: Color.fromRGBO(239, 239, 239, 1.0), width: 1.0)),
+            border: Border(
+                bottom: BorderSide(
+                    color: Color.fromRGBO(239, 239, 239, 1.0), width: 1.0)),
             image: DecorationImage(
-              image: NetworkImage('https://tva3.sinaimg.cn/crop.0.0.640.640.640/a1d3feabjw1eca1gkmhz8j20hs0hswfn.jpg',),
+              image: NetworkImage(
+                'https://tva3.sinaimg.cn/crop.0.0.640.640.640/a1d3feabjw1eca1gkmhz8j20hs0hswfn.jpg',
+              ),
               fit: BoxFit.cover,
             ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              _isShowTopContent ? Container(
-                height: 38.0,
-                color: Color.fromRGBO(255, 255, 255, _opacity),
-                child: Center(
-                  child: Text('top content'),
-                ),
-              ): Container(),
+              _isShowTopContent
+                  ? Container(
+                      height: 38.0,
+                      color: Color.fromRGBO(255, 255, 255, _opacity),
+                      child: Center(
+                        child: Text('top content'),
+                      ),
+                    )
+                  : Container(),
               Container(
                 height: 38.0,
                 color: Colors.white,
@@ -139,7 +145,6 @@ class _CollapsingListState extends State<CollapsingList> {
 
   @override
   Widget build(BuildContext context) {
-
     final double topPadding = MediaQuery.of(context).padding.top;
 
     return CustomScrollView(
@@ -147,7 +152,9 @@ class _CollapsingListState extends State<CollapsingList> {
       slivers: <Widget>[
         makeHeader('Header Section1', topPadding),
         SliverToBoxAdapter(
-          child: SizedBox(height: 20.0,),
+          child: SizedBox(
+            height: 20.0,
+          ),
         ),
         SliverGrid.count(
           crossAxisCount: 3,
@@ -165,13 +172,20 @@ class _CollapsingListState extends State<CollapsingList> {
 //        makeHeader('Header Section2'),
         SliverFixedExtentList(
           itemExtent: 150.0,
-          delegate: SliverChildListDelegate(
-            [
-              Container(margin: EdgeInsets.all(10.0),color: Colors.white,),
-              Container(margin: EdgeInsets.all(10.0),color: Colors.white,),
-              Container(margin: EdgeInsets.all(10.0),color: Colors.white,),
-            ]
-          ),
+          delegate: SliverChildListDelegate([
+            Container(
+              margin: EdgeInsets.all(10.0),
+              color: Colors.white,
+            ),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              color: Colors.white,
+            ),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              color: Colors.white,
+            ),
+          ]),
         ),
       ],
     );

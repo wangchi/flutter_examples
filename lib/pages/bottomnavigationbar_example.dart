@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorials/pages/home.dart';
-import 'package:flutter_tutorials/pages/video.dart';
+import 'package:flutter_tutorials/pages/video_example.dart';
 import 'package:flutter_tutorials/pages/find.dart';
 import 'package:flutter_tutorials/pages/favourite.dart';
 
-class BottomNavigationBarDemo extends StatefulWidget {
+class BottomNavigationBarExample extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _ButtomNavigationBarDemoState();
   }
 }
 
-class _ButtomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
+class _ButtomNavigationBarDemoState extends State<BottomNavigationBarExample> {
   int _currentIndex = 0;
 
   List<Widget> list = List();
 
   @override
   void initState() {
-    list..add(Home())..add(VideoPage())..add(FindPage())..add(FavouritePage());
+    list
+      ..add(Home())
+      ..add(VideoExample())
+      ..add(FindPage())
+      ..add(FavouritePage());
     super.initState();
   }
 

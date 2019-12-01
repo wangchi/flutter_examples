@@ -2,7 +2,7 @@ import 'dart:ui' as ui;
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class GetImageInfo extends StatelessWidget {
+class GetImageInfoExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class VideoApp extends StatefulWidget {
+class VideoExample extends StatefulWidget {
   @override
   _VideoAppState createState() => _VideoAppState();
 }
 
-class _VideoAppState extends State<VideoApp> {
+class _VideoAppState extends State<VideoExample> {
   VideoPlayerController _controller;
   bool _isPlaying = false;
 
@@ -16,23 +16,26 @@ class _VideoAppState extends State<VideoApp> {
     _controller = VideoPlayerController.network(
       'https://www.apple.com/105/media/cn/iphone-xs/2018/674b340a-40f1-4156-bbea-00f386459d3c/films/design/iphone-xs-design-tpl-cn-2018_1280x720h.mp4',
     )
-    ..addListener(() {
-      final bool isPlaying = _controller.value.isPlaying;
-      if (isPlaying != _isPlaying) {
-        setState(() {
-          _isPlaying = isPlaying;
-        });
-      }
-    })
-    ..initialize().then((_) {
-      // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-      setState(() {});
-    });
+      ..addListener(() {
+        final bool isPlaying = _controller.value.isPlaying;
+        if (isPlaying != _isPlaying) {
+          setState(() {
+            _isPlaying = isPlaying;
+          });
+        }
+      })
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Video Example'),
+      ),
       body: Container(
         child: _controller.value.initialized
             ? AspectRatio(
@@ -42,9 +45,8 @@ class _VideoAppState extends State<VideoApp> {
             : Container(),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _controller.value.isPlaying
-            ? _controller.pause
-            : _controller.play,
+        onPressed:
+            _controller.value.isPlaying ? _controller.pause : _controller.play,
         child: Icon(
           _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
         ),

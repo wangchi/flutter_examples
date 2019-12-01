@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'dart:typed_data';
+// import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -11,11 +11,11 @@ List<IntSize> _createSizes(int count) {
       (i) => new IntSize((rnd.nextInt(500) + 200), rnd.nextInt(800) + 200));
 }
 
-class Staggered extends StatelessWidget {
+class StaggeredExample extends StatelessWidget {
   static const int _kItemCount = 10;
   final List<IntSize> _sizes;
 
-  Staggered() : _sizes = _createSizes(_kItemCount).toList();
+  StaggeredExample() : _sizes = _createSizes(_kItemCount).toList();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class Staggered extends StatelessWidget {
     // print(_sizes.length);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Staggered Grid View Demo'),
+        title: Text('Staggered Grid View Example'),
       ),
       body: Container(
         width: double.infinity,

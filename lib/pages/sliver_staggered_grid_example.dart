@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class SliverStaggeredGridDemo extends StatefulWidget {
+class SliverStaggeredGridExample extends StatefulWidget {
   @override
   _SliverStaggeredGridDemoState createState() =>
       new _SliverStaggeredGridDemoState();
 }
 
-class _SliverStaggeredGridDemoState extends State<SliverStaggeredGridDemo> {
+class _SliverStaggeredGridDemoState extends State<SliverStaggeredGridExample> {
   int tileCount = 10;
 
   ScrollController _controller = new ScrollController();

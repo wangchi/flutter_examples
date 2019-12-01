@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
-
-class StickHeaderDemo extends StatefulWidget {
+class StickHeaderExample extends StatefulWidget {
   @override
   _StickHeaderDemoState createState() => new _StickHeaderDemoState();
 }
 
-
-class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProviderStateMixin {
-
+class _StickHeaderDemoState extends State<StickHeaderExample>
+    with SingleTickerProviderStateMixin {
   TabController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = new TabController(vsync: this, length:3);
+    _controller = new TabController(vsync: this, length: 3);
   }
 
   @override
@@ -65,31 +63,28 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(260.0),
         child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(16.0),
-                padding: EdgeInsets.all(20.0),
-                width: double.infinity,
-                height: 100.0,
-                color: Colors.white,
-                child: Center(
-                  child: Text('place something in appbar'),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(16.0),
-                padding: EdgeInsets.all(20.0),
-                width: double.infinity,
-                height: 100.0,
-                color: Colors.white,
-                child: Center(
-                  child: Text('place something in appbar'),
-                ),
-              ),
-            ]
-          )
-        ),
+            child: Column(children: <Widget>[
+          Container(
+            margin: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(20.0),
+            width: double.infinity,
+            height: 100.0,
+            color: Colors.white,
+            child: Center(
+              child: Text('place something in appbar'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(20.0),
+            width: double.infinity,
+            height: 100.0,
+            color: Colors.white,
+            child: Center(
+              child: Text('place something in appbar'),
+            ),
+          ),
+        ])),
       ),
     ));
 
@@ -122,177 +117,179 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
   Widget _buildTabs(BuildContext context, int firstIndex, int count) {
     bool offTab2 = true;
     return SliverStickyHeader(
-        header: Container(
+      header: Container(
           width: double.infinity,
           height: 60.0,
           color: Colors.white,
-          child: getTabBar()
-        ),
-        sliver: SliverList(
-          delegate: new SliverChildBuilderDelegate(
-            (context, i) => Container(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    height: 200.0,
-                    child: getTabBarPages(),
-                  ),
-                  // Container(
-                  //   height: 50.0,
-                  //   child: Row(
-                  //     children: <Widget>[
-                  //       Text('tab1'),
-                  //       Text('tab2'),
-                  //     ],
-                  //   ),
-                  // ),
-                  // Stack(
-                  //   children: <Widget>[
-                  //     Offstage(
-                  //       offstage: !offTab2,
-                  //       child: Container(
-                  //         height: 1000.0,
-                  //         color: Colors.green,
-                  //         child: Text('tab1'),
-                  //       ),
-                  //     ),
-                  //     Offstage(
-                  //       offstage: offTab2,
-                  //       child: Text('tab2'),
-                  //     )
-                  //   ],
-                  // )
-
-                ],
-              ),
+          child: getTabBar()),
+      sliver: SliverList(
+        delegate: new SliverChildBuilderDelegate(
+          (context, i) => Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 200.0,
+                  child: getTabBarPages(),
+                ),
+                // Container(
+                //   height: 50.0,
+                //   child: Row(
+                //     children: <Widget>[
+                //       Text('tab1'),
+                //       Text('tab2'),
+                //     ],
+                //   ),
+                // ),
+                // Stack(
+                //   children: <Widget>[
+                //     Offstage(
+                //       offstage: !offTab2,
+                //       child: Container(
+                //         height: 1000.0,
+                //         color: Colors.green,
+                //         child: Text('tab1'),
+                //       ),
+                //     ),
+                //     Offstage(
+                //       offstage: offTab2,
+                //       child: Text('tab2'),
+                //     )
+                //   ],
+                // )
+              ],
             ),
-            childCount: 1,
           ),
+          childCount: 1,
         ),
-      );
+      ),
+    );
   }
 
   Widget getTabBar() {
     return TabBar(
-      labelColor: Colors.green,
-      controller: _controller,
-      indicatorWeight: 2.0,
-      indicatorPadding: EdgeInsets.all(0.0),
-      indicatorColor: Colors.green,
-      tabs: <Widget>[
-        Tab(text: "Add", icon: Icon(Icons.add)),
-        Tab(text: "Edit", icon: Icon(Icons.edit)),
-        Tab(text: "Delete", icon: Icon(Icons.delete)),
-      ]
-    );
+        labelColor: Colors.green,
+        controller: _controller,
+        indicatorWeight: 2.0,
+        indicatorPadding: EdgeInsets.all(0.0),
+        indicatorColor: Colors.green,
+        tabs: <Widget>[
+          Tab(text: "Add", icon: Icon(Icons.add)),
+          Tab(text: "Edit", icon: Icon(Icons.edit)),
+          Tab(text: "Delete", icon: Icon(Icons.delete)),
+        ]);
   }
 
   Widget getTabBarPages() {
-    return TabBarView(
-      controller: _controller,
-      children: <Widget>[
-        Icon(Icons.mail, size: 128.0, color: Colors.black12),
-        Icon(Icons.image, size: 128.0, color: Colors.black12),
-        // Icon(Icons.live_tv, size: 128.0, color: Colors.black12),
-        Column(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.all(16.0),
-              width: double.infinity,
-              height: 200.0,
-              color: Colors.grey,
-              child: Center(child: Text('Demo'),),
+    return TabBarView(controller: _controller, children: <Widget>[
+      Icon(Icons.mail, size: 128.0, color: Colors.black12),
+      Icon(Icons.image, size: 128.0, color: Colors.black12),
+      // Icon(Icons.live_tv, size: 128.0, color: Colors.black12),
+      Column(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.all(16.0),
+            width: double.infinity,
+            height: 200.0,
+            color: Colors.grey,
+            child: Center(
+              child: Text('Demo'),
             ),
-            Container(
-              margin: EdgeInsets.all(16.0),
-              width: double.infinity,
-              height: 200.0,
-              color: Colors.grey,
-              child: Center(child: Text('Demo'),),
+          ),
+          Container(
+            margin: EdgeInsets.all(16.0),
+            width: double.infinity,
+            height: 200.0,
+            color: Colors.grey,
+            child: Center(
+              child: Text('Demo'),
             ),
-            Container(
-              margin: EdgeInsets.all(16.0),
-              width: double.infinity,
-              height: 200.0,
-              color: Colors.grey,
-              child: Center(child: Text('Demo'),),
+          ),
+          Container(
+            margin: EdgeInsets.all(16.0),
+            width: double.infinity,
+            height: 200.0,
+            color: Colors.grey,
+            child: Center(
+              child: Text('Demo'),
             ),
-            Container(
-              margin: EdgeInsets.all(16.0),
-              width: double.infinity,
-              height: 200.0,
-              color: Colors.grey,
-              child: Center(child: Text('Demo'),),
+          ),
+          Container(
+            margin: EdgeInsets.all(16.0),
+            width: double.infinity,
+            height: 200.0,
+            color: Colors.grey,
+            child: Center(
+              child: Text('Demo'),
             ),
-            Container(
-              margin: EdgeInsets.all(16.0),
-              width: double.infinity,
-              height: 200.0,
-              color: Colors.grey,
-              child: Center(child: Text('Demo'),),
-            )
+          ),
+          Container(
+            margin: EdgeInsets.all(16.0),
+            width: double.infinity,
+            height: 200.0,
+            color: Colors.grey,
+            child: Center(
+              child: Text('Demo'),
+            ),
+          )
+        ],
+      ),
 
-          ],
-        ),
-
-        // LayoutDemo()
-      ]
-    );
+      // LayoutDemo()
+    ]);
   }
-
 
   Widget _buildContent(BuildContext context, int firstIndex, int count) {
     bool offTab2 = true;
     return SliverStickyHeader(
-        header: Container(
-          width: double.infinity,
-          height: 50.0,
-          color: Colors.white,
-          child: Row(
-            children: <Widget>[
-              Text('tab1'),
-              Text('tab1'),
-              Text('tab1'),
-            ],
-          ),
+      header: Container(
+        width: double.infinity,
+        height: 50.0,
+        color: Colors.white,
+        child: Row(
+          children: <Widget>[
+            Text('tab1'),
+            Text('tab1'),
+            Text('tab1'),
+          ],
         ),
-        sliver: SliverList(
-          delegate: new SliverChildBuilderDelegate(
-            (context, i) => Container(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    height: 50.0,
-                    child: Row(
-                      children: <Widget>[
-                        Text('tab1'),
-                        Text('tab2'),
-                      ],
-                    ),
-                  ),
-                  Stack(
+      ),
+      sliver: SliverList(
+        delegate: new SliverChildBuilderDelegate(
+          (context, i) => Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 50.0,
+                  child: Row(
                     children: <Widget>[
-                      Offstage(
-                        offstage: !offTab2,
-                        child: Container(
-                          height: 1000.0,
-                          color: Colors.green,
-                          child: Text('tab1'),
-                        ),
-                      ),
-                      Offstage(
-                        offstage: offTab2,
-                        child: Text('tab2'),
-                      )
+                      Text('tab1'),
+                      Text('tab2'),
                     ],
-                  )
-                ],
-              ),
+                  ),
+                ),
+                Stack(
+                  children: <Widget>[
+                    Offstage(
+                      offstage: !offTab2,
+                      child: Container(
+                        height: 1000.0,
+                        color: Colors.green,
+                        child: Text('tab1'),
+                      ),
+                    ),
+                    Offstage(
+                      offstage: offTab2,
+                      child: Text('tab2'),
+                    )
+                  ],
+                )
+              ],
             ),
-            childCount: 1,
           ),
+          childCount: 1,
         ),
-      );
+      ),
+    );
   }
 
   List<Widget> _buildLists(BuildContext context, int firstIndex, int count) {
@@ -303,11 +300,11 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
         sliver: new SliverList(
           delegate: new SliverChildBuilderDelegate(
             (context, i) => new ListTile(
-                  leading: new CircleAvatar(
-                    child: new Text('$sliverIndex'),
-                  ),
-                  title: new Text('List tile #$i'),
-                ),
+              leading: new CircleAvatar(
+                child: new Text('$sliverIndex'),
+              ),
+              title: new Text('List tile #$i'),
+            ),
             childCount: 4,
           ),
         ),
@@ -325,11 +322,11 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
         sliver: new SliverList(
           delegate: new SliverChildBuilderDelegate(
             (context, i) => new ListTile(
-                  leading: new CircleAvatar(
-                    child: new Text('$sliverIndex'),
-                  ),
-                  title: new Text('List tile #$i'),
-                ),
+              leading: new CircleAvatar(
+                child: new Text('$sliverIndex'),
+              ),
+              title: new Text('List tile #$i'),
+            ),
             childCount: 4,
           ),
         ),
@@ -347,26 +344,26 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
               crossAxisCount: 3, crossAxisSpacing: 4.0, mainAxisSpacing: 4.0),
           delegate: new SliverChildBuilderDelegate(
             (context, i) => GestureDetector(
-                  onTap: () => Scaffold.of(context).showSnackBar(
-                      new SnackBar(content: Text('Grid tile #$i'))),
-                  child: new GridTile(
-                    child: Card(
-                      child: new Container(
-                        color: Colors.green,
-                      ),
-                    ),
-                    footer: new Container(
-                      color: Colors.white.withOpacity(0.5),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: new Text(
-                          'Grid tile #$i',
-                          style: const TextStyle(color: Colors.black),
-                        ),
-                      ),
+              onTap: () => Scaffold.of(context)
+                  .showSnackBar(new SnackBar(content: Text('Grid tile #$i'))),
+              child: new GridTile(
+                child: Card(
+                  child: new Container(
+                    color: Colors.green,
+                  ),
+                ),
+                footer: new Container(
+                  color: Colors.white.withOpacity(0.5),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: new Text(
+                      'Grid tile #$i',
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
+              ),
+            ),
             childCount: 9,
           ),
         ),
@@ -391,26 +388,26 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
                 childAspectRatio: 1.0),
             delegate: new SliverChildBuilderDelegate(
               (context, i) => GestureDetector(
-                    onTap: () => Scaffold.of(context).showSnackBar(
-                        new SnackBar(content: Text('Grid tile #$i'))),
-                    child: new GridTile(
-                      child: Card(
-                        child: new Container(
-                          color: Colors.orange,
-                        ),
-                      ),
-                      footer: new Container(
-                        color: Colors.white.withOpacity(0.5),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: new Text(
-                            'Grid tile #$i',
-                            style: const TextStyle(color: Colors.black),
-                          ),
-                        ),
+                onTap: () => Scaffold.of(context)
+                    .showSnackBar(new SnackBar(content: Text('Grid tile #$i'))),
+                child: new GridTile(
+                  child: Card(
+                    child: new Container(
+                      color: Colors.orange,
+                    ),
+                  ),
+                  footer: new Container(
+                    color: Colors.white.withOpacity(0.5),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: new Text(
+                        'Grid tile #$i',
+                        style: const TextStyle(color: Colors.black),
                       ),
                     ),
                   ),
+                ),
+              ),
               childCount: 12,
             ),
           ),
@@ -441,8 +438,7 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
           height: 44.0,
           width: 44.0,
           child: GestureDetector(
-            onTap: () => Scaffold
-                .of(context)
+            onTap: () => Scaffold.of(context)
                 .showSnackBar(new SnackBar(content: Text('$index'))),
             child: new CircleAvatar(
               backgroundColor: Colors.orangeAccent,
@@ -458,8 +454,7 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
   Widget _buildAnimatedHeader(
       BuildContext context, int index, SliverStickyHeaderState state) {
     return GestureDetector(
-      onTap: () => Scaffold
-          .of(context)
+      onTap: () => Scaffold.of(context)
           .showSnackBar(new SnackBar(content: Text('$index'))),
       child: new Container(
         height: 60.0,
@@ -490,11 +485,11 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
       sliver: new SliverList(
         delegate: new SliverChildBuilderDelegate(
           (context, i) => new ListTile(
-                leading: new CircleAvatar(
-                  child: new Text('0'),
-                ),
-                title: new Text('List tile #$i'),
-              ),
+            leading: new CircleAvatar(
+              child: new Text('0'),
+            ),
+            title: new Text('List tile #$i'),
+          ),
           childCount: 4,
         ),
       ),
@@ -504,24 +499,24 @@ class _StickHeaderDemoState extends State<StickHeaderDemo> with SingleTickerProv
   Widget _buildBuilderExample() {
     return new SliverStickyHeaderBuilder(
       builder: (context, state) => new Container(
-            height: 60.0,
-            color: (state.isPinned ? Colors.pink : Colors.lightBlue)
-                .withOpacity(1.0 - state.scrollPercentage),
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            alignment: Alignment.centerLeft,
-            child: new Text(
-              'Header #1',
-              style: const TextStyle(color: Colors.white),
-            ),
-          ),
+        height: 60.0,
+        color: (state.isPinned ? Colors.pink : Colors.lightBlue)
+            .withOpacity(1.0 - state.scrollPercentage),
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        alignment: Alignment.centerLeft,
+        child: new Text(
+          'Header #1',
+          style: const TextStyle(color: Colors.white),
+        ),
+      ),
       sliver: new SliverList(
         delegate: new SliverChildBuilderDelegate(
           (context, i) => new ListTile(
-                leading: new CircleAvatar(
-                  child: new Text('0'),
-                ),
-                title: new Text('List tile #$i'),
-              ),
+            leading: new CircleAvatar(
+              child: new Text('0'),
+            ),
+            title: new Text('List tile #$i'),
+          ),
           childCount: 4,
         ),
       ),
