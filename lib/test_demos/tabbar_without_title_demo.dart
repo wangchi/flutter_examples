@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/demos/listview.dart';
+// import 'package:flutter_tutorials/demos/listview.dart';
 // import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
-import 'package:flutter_tutorials/common/bubble_tab_indicator.dart';
+// import 'package:flutter_tutorials/widgets/bubble_tab_indicator.dart';
 
 // home: TabBarDemo()
 class TabBarWithoutTitleDemo extends StatelessWidget {
@@ -51,13 +51,13 @@ class TabBarWithoutTitleDemo extends StatelessWidget {
                   height: 10.0,
                 ),
               ],
-            )
+            ),
           ),
           // flexibleSpace: SafeArea(
           //   child: getTabBar()
           // ),
         ),
-        body: getTabBarPages()
+        body: getTabBarPages(),
       ),
     );
   }
@@ -83,10 +83,7 @@ class TabBarWithoutTitleDemo extends StatelessWidget {
               // height: double.infinity,
               child: Text(
                 '推荐',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold
-                ),
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -97,16 +94,13 @@ class TabBarWithoutTitleDemo extends StatelessWidget {
               // height: double.infinity,
               child: Text(
                 '我的',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold
-                ),
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
             ),
           ),
           // Tab(text: "Edit", icon: Icon(Icons.edit)),
           // Tab(text: "Delete", icon: Icon(Icons.delete)),
-        ]
+        ],
       ),
     );
   }
@@ -125,41 +119,51 @@ class TabBarWithoutTitleDemo extends StatelessWidget {
                 width: double.infinity,
                 height: 200.0,
                 color: Colors.grey,
-                child: Center(child: Text('Demo'),),
+                child: Center(
+                  child: Text('Demo'),
+                ),
               ),
               Container(
                 margin: EdgeInsets.all(16.0),
                 width: double.infinity,
                 height: 200.0,
                 color: Colors.grey,
-                child: Center(child: Text('Demo'),),
+                child: Center(
+                  child: Text('Demo'),
+                ),
               ),
               Container(
                 margin: EdgeInsets.all(16.0),
                 width: double.infinity,
                 height: 200.0,
                 color: Colors.grey,
-                child: Center(child: Text('Demo'),),
+                child: Center(
+                  child: Text('Demo'),
+                ),
               ),
               Container(
                 margin: EdgeInsets.all(16.0),
                 width: double.infinity,
                 height: 200.0,
                 color: Colors.grey,
-                child: Center(child: Text('Demo'),),
+                child: Center(
+                  child: Text('Demo'),
+                ),
               ),
               Container(
                 margin: EdgeInsets.all(16.0),
                 width: double.infinity,
                 height: 200.0,
                 color: Colors.grey,
-                child: Center(child: Text('Demo'),),
+                child: Center(
+                  child: Text('Demo'),
+                ),
               )
             ],
           ),
-        )
+        ),
         // LayoutDemo()
-      ]
+      ],
     );
   }
 }
