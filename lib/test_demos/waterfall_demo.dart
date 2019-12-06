@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:typed_data';
-import 'package:flutter_tutorials/adapter.dart';
-
+import '../adapter.dart';
 
 class WaterfallDemo extends StatefulWidget {
   @override
   _WaterfallDemoState createState() => new _WaterfallDemoState();
 }
-
 
 class DoubleSize {
   const DoubleSize(this.width, this.height);
@@ -19,13 +17,13 @@ class DoubleSize {
 
 List<DoubleSize> _createSizes(int count) {
   Random rnd = new Random();
-  return new List.generate(count,
-      (i) => new DoubleSize((rnd.nextInt(500) + 200.0), rnd.nextInt(800) + 200.0));
+  return new List.generate(
+      count,
+      (i) =>
+          new DoubleSize((rnd.nextInt(500) + 200.0), rnd.nextInt(800) + 200.0));
 }
 
-
 class _WaterfallDemoState extends State<WaterfallDemo> {
-
   @override
   void initState() {
     super.initState();
@@ -37,23 +35,28 @@ class _WaterfallDemoState extends State<WaterfallDemo> {
   void getPosts() {
     posts.addAll([
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic1.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic1.jpg',
         'title': '这是一段文字'
       },
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic2.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic2.jpg',
         'title': '这是一段文字'
       },
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic3.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic3.jpg',
         'title': '这是一段文字'
       },
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic4.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic4.jpg',
         'title': '这是一段文字'
       },
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic5.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic5.jpg',
         'title': '这是一段文字'
       }
     ]);
@@ -61,13 +64,11 @@ class _WaterfallDemoState extends State<WaterfallDemo> {
 
   // _sizes = _createSizes(_kItemCount).toList();
 
-
   List<Widget> buildPostsfalls() {
     List<Widget> lists = <Widget>[];
     var _sizes = _createSizes(1000).toList();
 
     for (var i = 0, len = posts.length; i < len; i++) {
-
       // print('====');
       // print(_sizes);
 
@@ -86,13 +87,11 @@ class _WaterfallDemoState extends State<WaterfallDemo> {
       lists.add(item);
     }
 
-
     return lists;
   }
 
   @override
   Widget build(BuildContext context) {
-
     Adapter adapter = Adapter(width: 750, height: 1334)..init(context);
 
     print('Design Width: ${adapter.designWidth}');
@@ -104,7 +103,6 @@ class _WaterfallDemoState extends State<WaterfallDemo> {
     print('Scale Height: ${adapter.scaleHeight}');
     print(adapter.width(92));
 
-
     return Scaffold(
       appBar: new AppBar(
         title: Text('Flutter Tutorials'),
@@ -114,39 +112,35 @@ class _WaterfallDemoState extends State<WaterfallDemo> {
         height: double.infinity,
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(10.0),
-                width: double.infinity,
-                height: 100.0,
-                color: Colors.white,
-                child: Center(
-                  child: Text('test'),
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.all(10.0),
+                  width: double.infinity,
+                  height: 100.0,
+                  color: Colors.white,
+                  child: Center(
+                    child: Text('test'),
+                  ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10.0),
-                width: double.infinity,
-                height: 500.0,
-                color: Colors.white,
-                child: Stack(
-                  children: buildPostsfalls()
-                )
-              ),
-              Container(
-                margin: EdgeInsets.all(10.0),
-                width: double.infinity,
-                height: 100.0,
-                color: Colors.white,
-                child: Center(
-                  child: Text('test'),
+                Container(
+                    margin: EdgeInsets.all(10.0),
+                    width: double.infinity,
+                    height: 500.0,
+                    color: Colors.white,
+                    child: Stack(children: buildPostsfalls())),
+                Container(
+                  margin: EdgeInsets.all(10.0),
+                  width: double.infinity,
+                  height: 100.0,
+                  color: Colors.white,
+                  child: Center(
+                    child: Text('test'),
+                  ),
                 ),
-              ),
-            ]
-          ),
-        )
-      )
+              ]),
+        ),
+      ),
     );
   }
 }
@@ -161,7 +155,6 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     RenderBox getBox = context.findRenderObject();
     print('Size');
     print(getBox.size);
@@ -208,9 +201,7 @@ class PostItem extends StatelessWidget {
             ),
           )
         ],
-      )
+      ),
     );
   }
 }
-
-

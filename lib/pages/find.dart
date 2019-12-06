@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/test_demos/drawerdemo.dart';
+import '../test_demos/drawerdemo.dart';
 
 class FindPage extends StatelessWidget {
   @override

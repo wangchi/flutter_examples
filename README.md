@@ -1,14 +1,14 @@
-# flutter_tutorials
+# flutter_examples
 
-一个包含多个示例的 Flutter 项目
+Flutter 小例子
 
 ## 运行
 
 前提是你的 Flutter 环境已经搭建好了，Flutter 环境搭建请参考 [https://flutter.io/get-started/install/](https://flutter.io/get-started/install/)
 
 ```bash
-git clone git@github.com:wangchi/flutter_tutorials.git
-cd flutter_tutorials
+git clone git@github.com:wangchi/flutter_examples.git
+cd flutter_examples
 flutter run
 ```
 
@@ -24,6 +24,6 @@ flutter run
 
 ![](./screenshots/screenshot4.png)
 
-## LICENSE
+## License
 
-[MIT LICENSE](https://wangchi.mit-license.org/)
+[MIT LICENSE](./LICENSE)

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_tutorials/pages/home.dart';
+import 'pages/home.dart';
 import 'pages/hello_example.dart';
 import 'pages/appbar_example.dart';
 import 'pages/tabbar_example.dart';
@@ -10,15 +10,15 @@ import 'pages/listview_example.dart';
 import 'pages/video_example.dart';
 import 'pages/staggered_example.dart';
 import 'pages/sliver_staggered_grid_example.dart';
-import 'package:flutter_tutorials/pages/bottomnavigationbar_example.dart';
-import 'package:flutter_tutorials/pages/sliver_example.dart';
-import 'package:flutter_tutorials/pages/sliver_tabbar_example.dart';
-import 'package:flutter_tutorials/pages/sliver_appbar_example.dart';
-import 'package:flutter_tutorials/pages/sliver_persistent_header_example.dart';
-import 'package:flutter_tutorials/pages/stick_header_example.dart';
-import 'package:flutter_tutorials/pages/lazyload_image_example.dart';
-import 'package:flutter_tutorials/pages/loading_example.dart';
-import 'package:flutter_tutorials/pages/get_image_info_example.dart';
+import 'pages/bottomnavigationbar_example.dart';
+import 'pages/sliver_example.dart';
+import 'pages/sliver_tabbar_example.dart';
+import 'pages/sliver_appbar_example.dart';
+import 'pages/sliver_persistent_header_example.dart';
+import 'pages/stick_header_example.dart';
+import 'pages/lazyload_image_example.dart';
+import 'pages/loading_example.dart';
+import 'pages/get_image_info_example.dart';
 import 'pages/webview_example.dart';
 import 'pages/flutter_redux_example.dart';
 

@@ -106,7 +106,10 @@ class _HomeState extends State<Home> {
               color: Colors.white,
               borderRadius: BorderRadius.circular(3.0),
             ),
-            child: Text(item['name']),
+            child: Text(
+              item['name'],
+              style: TextStyle(color: Color.fromRGBO(34, 34, 34, 1)),
+            ),
           ),
         ),
       );
@@ -117,17 +120,134 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter Examples'),
-      ),
-      body: Container(
-        height: double.infinity,
-        color: Color.fromRGBO(0, 0, 0, .05),
-        child: SingleChildScrollView(
-          child: Column(
-            children: buildDemoList(),
+    return DefaultTabController(
+      length: 8,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Flutter Examples',
+            style: TextStyle(
+              color: Color.fromRGBO(34, 34, 34, 1),
+            ),
           ),
+          leading: IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: () => debugPrint('Search button pressed!'),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.settings),
+              tooltip: 'Settings',
+              onPressed: () => debugPrint('Settings button pressed!'),
+            ),
+          ],
+          bottom: TabBar(
+            indicatorColor: Colors.white,
+            isScrollable: true,
+            tabs: <Widget>[
+              Tab(
+                text: 'Layout',
+              ),
+              Tab(
+                text: 'Navigation',
+              ),
+              Tab(
+                text: 'Data Entry',
+              ),
+              Tab(
+                text: 'Data Display',
+              ),
+              Tab(
+                text: 'Feedback',
+              ),
+              Tab(
+                text: 'Gesture',
+              ),
+              Tab(
+                text: 'Combination',
+              ),
+              Tab(
+                text: 'Other',
+              ),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            Container(
+              height: double.infinity,
+              color: Color.fromRGBO(248, 248, 248, 1),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: buildDemoList(),
+                ),
+              ),
+            ),
+            Container(
+              height: double.infinity,
+              color: Color.fromRGBO(248, 248, 248, 1),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: buildDemoList(),
+                ),
+              ),
+            ),
+            Container(
+              height: double.infinity,
+              color: Color.fromRGBO(248, 248, 248, 1),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: buildDemoList(),
+                ),
+              ),
+            ),
+            Container(
+              height: double.infinity,
+              color: Color.fromRGBO(248, 248, 248, 1),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: buildDemoList(),
+                ),
+              ),
+            ),
+            Container(
+              height: double.infinity,
+              color: Color.fromRGBO(248, 248, 248, 1),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: buildDemoList(),
+                ),
+              ),
+            ),
+            Container(
+              height: double.infinity,
+              color: Color.fromRGBO(248, 248, 248, 1),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: buildDemoList(),
+                ),
+              ),
+            ),
+            Container(
+              height: double.infinity,
+              color: Color.fromRGBO(248, 248, 248, 1),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: buildDemoList(),
+                ),
+              ),
+            ),
+            Container(
+              height: double.infinity,
+              color: Color.fromRGBO(248, 248, 248, 1),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: buildDemoList(),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

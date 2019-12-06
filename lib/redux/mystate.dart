@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/redux/theme_redux.dart';
+import 'theme_redux.dart';
 
 class MyState {
   ThemeData themeData;

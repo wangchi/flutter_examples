@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/adapter.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
+import '../adapter.dart';
 
 class WaterfallDemo2 extends StatefulWidget {
   @override
   _WaterfallDemoState createState() => new _WaterfallDemoState();
 }
 
-
 class _WaterfallDemoState extends State<WaterfallDemo2> {
-
   @override
   void initState() {
     super.initState();
@@ -22,23 +19,28 @@ class _WaterfallDemoState extends State<WaterfallDemo2> {
   void getPosts() {
     posts.addAll([
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic1.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic1.jpg',
         'title': '这是一段文字'
       },
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic2.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic2.jpg',
         'title': '这是一段文字'
       },
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic3.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic3.jpg',
         'title': '这是一段文字'
       },
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic4.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic4.jpg',
         'title': '这是一段文字'
       },
       {
-        'pic': 'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic5.jpg',
+        'pic':
+            'https://raw.githubusercontent.com/wangchi/code2018/master/css/%E7%80%91%E5%B8%83%E6%B5%81/images/pic5.jpg',
         'title': '这是一段文字'
       }
     ]);
@@ -47,7 +49,6 @@ class _WaterfallDemoState extends State<WaterfallDemo2> {
   List<Widget> buildPostsfalls() {
     List<Widget> lists = <Widget>[];
     posts.forEach((post) {
-
       var item = Positioned(
         left: 0.0,
         top: 0.0,
@@ -65,7 +66,6 @@ class _WaterfallDemoState extends State<WaterfallDemo2> {
 
   @override
   Widget build(BuildContext context) {
-
     Adapter adapter = Adapter(width: 750, height: 1334)..init(context);
 
     print('Design Width: ${adapter.designWidth}');
@@ -76,7 +76,6 @@ class _WaterfallDemoState extends State<WaterfallDemo2> {
     print('Scale Width: ${adapter.scaleWidth}');
     print('Scale Height: ${adapter.scaleHeight}');
     print(adapter.width(92));
-
 
     return Scaffold(
       appBar: new AppBar(
@@ -99,14 +98,11 @@ class _WaterfallDemoState extends State<WaterfallDemo2> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(10.0),
-                width: double.infinity,
-                height: 500.0,
-                color: Colors.white,
-                child: Stack(
-                  children: buildPostsfalls()
-                )
-              ),
+                  margin: EdgeInsets.all(10.0),
+                  width: double.infinity,
+                  height: 500.0,
+                  color: Colors.white,
+                  child: Stack(children: buildPostsfalls())),
               Container(
                 margin: EdgeInsets.all(10.0),
                 width: double.infinity,
@@ -122,15 +118,18 @@ class _WaterfallDemoState extends State<WaterfallDemo2> {
                   itemCount: 6,
                   itemBuilder: (BuildContext context, int index) => Container(
                     color: Colors.green,
-                    child: Image.network('http://www.4gbizhi.com/uploads/allimg/150316/144Ha0M-0.jpg', width: double.infinity,),
+                    child: Image.network(
+                      'http://www.4gbizhi.com/uploads/allimg/150316/144Ha0M-0.jpg',
+                      width: double.infinity,
+                    ),
                   ),
                   staggeredTileBuilder: (int index) => StaggeredTile.fit(2),
                 ),
               ),
-            ]
+            ],
           ),
-        )
-      )
+        ),
+      ),
     );
   }
 }
@@ -143,7 +142,6 @@ class PostItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     RenderBox getBox = context.findRenderObject();
     print('FFFFFF');
     // print(context.size);
@@ -171,9 +169,7 @@ class PostItem extends StatelessWidget {
             ),
           )
         ],
-      )
+      ),
     );
   }
 }
-
-

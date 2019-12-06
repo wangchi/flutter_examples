@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:flutter_tutorials/store/store.dart';
+import '../store/store.dart';
 
 class FlutterReduxExample extends StatefulWidget {
   @override

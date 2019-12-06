@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/model/post.dart';
+import '../model/post.dart';
 
 class ListViewExample extends StatelessWidget {
   Widget _listItemBuilder(BuildContext context, int index) {

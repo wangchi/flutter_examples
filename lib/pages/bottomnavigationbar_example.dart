@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/pages/home.dart';
-import 'package:flutter_tutorials/pages/video_example.dart';
-import 'package:flutter_tutorials/pages/find.dart';
-import 'package:flutter_tutorials/pages/favourite.dart';
+import '../pages/home.dart';
+import '../pages/video_example.dart';
+import '../pages/find.dart';
+import '../pages/favourite.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
   @override

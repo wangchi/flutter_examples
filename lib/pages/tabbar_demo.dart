@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorials/demos/listview.dart';
-import 'package:flutter_tutorials/demos/drawerdemo.dart';
+import '../test_demos/listview.dart';
+import '../test_demos/drawerdemo.dart';
 // import 'package:flutter_tutorials/pages/pageviewdemo.dart';
 
 class TabBarDemo extends StatelessWidget {
