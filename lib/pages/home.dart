@@ -6,7 +6,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Map<String, dynamic>> demoList = [
+  List<Map<String, dynamic>> basicList = [
     {
       'name': 'Hello World',
       'path': '/hello_example',
@@ -89,10 +89,14 @@ class _HomeState extends State<Home> {
     },
   ];
 
-  List<Widget> buildDemoList() {
+  List<Map<String, dynamic>> examples = [
+    {'name': 'Fish Redux Counter', 'path': '/fish_redux_counter'}
+  ];
+
+  List<Widget> buildMenuList(list) {
     List<Widget> ret = [];
 
-    demoList.forEach((item) {
+    list.forEach((item) {
       ret.add(
         GestureDetector(
           onTap: () {
@@ -121,7 +125,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 8,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -147,29 +151,29 @@ class _HomeState extends State<Home> {
             isScrollable: true,
             tabs: <Widget>[
               Tab(
-                text: 'Layout',
+                text: 'Basic',
               ),
               Tab(
-                text: 'Navigation',
+                text: 'Examples',
               ),
-              Tab(
-                text: 'Data Entry',
-              ),
-              Tab(
-                text: 'Data Display',
-              ),
-              Tab(
-                text: 'Feedback',
-              ),
-              Tab(
-                text: 'Gesture',
-              ),
-              Tab(
-                text: 'Combination',
-              ),
-              Tab(
-                text: 'Other',
-              ),
+              // Tab(
+              //   text: 'Data Entry',
+              // ),
+              // Tab(
+              //   text: 'Data Display',
+              // ),
+              // Tab(
+              //   text: 'Feedback',
+              // ),
+              // Tab(
+              //   text: 'Gesture',
+              // ),
+              // Tab(
+              //   text: 'Combination',
+              // ),
+              // Tab(
+              //   text: 'Other',
+              // ),
             ],
           ),
         ),
@@ -180,7 +184,7 @@ class _HomeState extends State<Home> {
               color: Color.fromRGBO(248, 248, 248, 1),
               child: SingleChildScrollView(
                 child: Column(
-                  children: buildDemoList(),
+                  children: buildMenuList(basicList),
                 ),
               ),
             ),
@@ -189,61 +193,7 @@ class _HomeState extends State<Home> {
               color: Color.fromRGBO(248, 248, 248, 1),
               child: SingleChildScrollView(
                 child: Column(
-                  children: buildDemoList(),
-                ),
-              ),
-            ),
-            Container(
-              height: double.infinity,
-              color: Color.fromRGBO(248, 248, 248, 1),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: buildDemoList(),
-                ),
-              ),
-            ),
-            Container(
-              height: double.infinity,
-              color: Color.fromRGBO(248, 248, 248, 1),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: buildDemoList(),
-                ),
-              ),
-            ),
-            Container(
-              height: double.infinity,
-              color: Color.fromRGBO(248, 248, 248, 1),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: buildDemoList(),
-                ),
-              ),
-            ),
-            Container(
-              height: double.infinity,
-              color: Color.fromRGBO(248, 248, 248, 1),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: buildDemoList(),
-                ),
-              ),
-            ),
-            Container(
-              height: double.infinity,
-              color: Color.fromRGBO(248, 248, 248, 1),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: buildDemoList(),
-                ),
-              ),
-            ),
-            Container(
-              height: double.infinity,
-              color: Color.fromRGBO(248, 248, 248, 1),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: buildDemoList(),
+                  children: buildMenuList(examples),
                 ),
               ),
             ),

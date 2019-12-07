@@ -30,15 +30,21 @@ class DrawerExample extends StatelessWidget {
               decoration: new BoxDecoration(
                 image: new DecorationImage(
                   image: new NetworkImage(
-                      'https://tva3.sinaimg.cn/crop.0.0.640.640.640/a1d3feabjw1eca1gkmhz8j20hs0hswfn.jpg'),
+                      'https://img.t.sinajs.cn/t6/skin/skinvip334/images/body_bg_page.jpg?id=1410943047113'),
                   fit: BoxFit.cover,
                 ),
               ),
-              accountName: new Text('Blues Dari'),
-              accountEmail: new Text('bluesdari@gmail.com'),
+              accountName: Text(
+                'Blues Dari',
+                style: TextStyle(color: Colors.white),
+              ),
+              accountEmail: Text(
+                'bluesdari@gmail.com',
+                style: TextStyle(color: Colors.white),
+              ),
               currentAccountPicture: new CircleAvatar(
                 backgroundImage: new NetworkImage(
-                    'https://tva2.sinaimg.cn/crop.0.0.640.640.180/9e5b07c7jw8f014yvcyjbj20hs0hs3z4.jpg'),
+                    'https://tvax3.sinaimg.cn/crop.0.0.888.888.180/007D9ftkly8g8pf2tm1fbj30oo0oowg4.jpg?KID=imgbed,tva&Expires=1575724146&ssig=OobPg3g2Fk'),
               ),
             ),
             ListTile(

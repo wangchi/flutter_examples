@@ -21,9 +21,13 @@ import 'pages/loading_example.dart';
 import 'pages/get_image_info_example.dart';
 import 'pages/webview_example.dart';
 import 'pages/flutter_redux_example.dart';
+import 'pages/examples/fish_redux_counter/page.dart';
 
 final routes = {
+  // home entry
   '/': (BuildContext context) => Home(),
+
+  // baisc
   '/hello_example': (BuildContext context) => HelloExample(),
   '/appbar_example': (BuildContext context) => AppBarExample(),
   '/tabbar_example': (BuildContext context) => TabBarExample(),
@@ -47,4 +51,8 @@ final routes = {
   '/get_image_info_example': (BuildContext context) => GetImageInfoExample(),
   '/webview_example': (BuildContext context) => WebViewExample(),
   '/flutter_redux': (BuildContext context) => FlutterReduxExample(),
+
+  // examples
+  '/fish_redux_counter': (BuildContext content) =>
+      CounterPage().buildPage(<String, dynamic>{}),
 };
